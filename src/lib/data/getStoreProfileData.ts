@@ -15,6 +15,7 @@ export interface StoreProfileData {
   phone_secondary: string | null
   email: string | null
   website: string | null
+  google_maps_url: string | null
   address_line1: string | null
   address_line2: string | null
   postcode: string | null

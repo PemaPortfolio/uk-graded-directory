@@ -12,6 +12,7 @@ export interface ProviderProfileData {
   phone_secondary: string | null
   email: string | null
   website: string | null
+  google_maps_url: string | null
   address_line1: string | null
   address_line2: string | null
   city_name: string | null

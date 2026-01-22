@@ -16,6 +16,7 @@ import {
   ProviderBrandsSection,
   OtherProvidersSection,
 } from '@/components/provider'
+import { ReviewsSection } from '@/components/reviews'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -97,7 +98,6 @@ export default async function ProviderProfilePage({ params }: Props) {
     country,
     categories,
     authorizedBrands,
-    // reviews - TODO: Implement reviews display
     otherProviders,
   } = data
 
@@ -138,6 +138,15 @@ export default async function ProviderProfilePage({ params }: Props) {
 
             {/* Pricing */}
             <ProviderPricingSection provider={provider} />
+
+            {/* Reviews */}
+            <ReviewsSection
+              entityType="provider"
+              entityName={provider.business_name}
+              averageRating={provider.average_rating}
+              reviewCount={provider.review_count}
+              googleMapsUrl={provider.google_maps_url}
+            />
 
             {/* Authorized Brands */}
             <ProviderBrandsSection brands={authorizedBrands} />

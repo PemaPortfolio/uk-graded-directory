@@ -12,9 +12,9 @@ import {
   StoreCategoriesSection,
   StoreServicesSection,
   StoreBrandsSection,
-  StoreReviewsSection,
   OtherStoresSection,
 } from '@/components/store'
+import { ReviewsSection } from '@/components/reviews'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -90,7 +90,7 @@ export default async function StoreProfilePage({ params }: Props) {
     notFound()
   }
 
-  const { store, place, country, categories, brands, reviews, otherStores } = data
+  const { store, place, country, categories, brands, otherStores } = data
 
   return (
     <>
@@ -128,11 +128,12 @@ export default async function StoreProfilePage({ params }: Props) {
             <StoreBrandsSection brands={brands} />
 
             {/* Reviews */}
-            <StoreReviewsSection
-              reviews={reviews}
+            <ReviewsSection
+              entityType="store"
+              entityName={store.business_name}
               averageRating={store.average_rating}
               reviewCount={store.review_count}
-              storeName={store.business_name}
+              googleMapsUrl={store.google_maps_url}
             />
 
             {/* Other Stores */}
