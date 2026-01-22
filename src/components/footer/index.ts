@@ -1,0 +1,8 @@
+export { default as Footer } from './Footer'
+export { default as FooterMain } from './FooterMain'
+export { default as FooterRegions } from './FooterRegions'
+export { default as FooterRegionGroup } from './FooterRegionGroup'
+export { default as FooterPopularCities } from './FooterPopularCities'
+export { default as FooterBottomBar } from './FooterBottomBar'
+export { default as FooterAccordion } from './FooterAccordion'
+export { default as SocialLinks } from './SocialLinks'
