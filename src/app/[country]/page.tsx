@@ -48,6 +48,21 @@ interface Props {
 // Valid country slugs
 const VALID_COUNTRIES = ['england', 'scotland', 'wales', 'northern-ireland']
 
+// Reserved paths that should NOT be handled by this dynamic route
+// These have their own static routes in the app directory
+const RESERVED_PATHS = [
+  'business',
+  'login',
+  'auth',
+  'store',
+  'provider',
+  'search',
+  'api',
+  'dashboard',
+  'account',
+  '_next',
+]
+
 // Generate static params for all countries
 export async function generateStaticParams() {
   return VALID_COUNTRIES.map((country) => ({ country }))
@@ -221,6 +236,11 @@ async function generateRepairMetadata(repairSlug: string): Promise<Metadata> {
  */
 export default async function DynamicSlugPage({ params }: Props) {
   const { country: slug } = await params
+
+  // Immediately reject reserved paths - these have their own static routes
+  if (RESERVED_PATHS.includes(slug.toLowerCase())) {
+    notFound()
+  }
 
   // Check if this is a repair slug first (ends with -repair)
   if (isRepairSlug(slug)) {

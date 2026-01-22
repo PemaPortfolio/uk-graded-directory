@@ -9,7 +9,8 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 // Routes that require authentication
-const protectedPaths = ['/dashboard', '/account', '/business']
+// Note: /business/add and /business/help are public, only /dashboard needs auth
+const protectedPaths = ['/dashboard', '/account']
 
 // Routes that should redirect to dashboard if already authenticated
 const authOnlyPaths = ['/login']

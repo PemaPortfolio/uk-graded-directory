@@ -20,6 +20,20 @@ interface Props {
 // Valid country slugs
 const VALID_COUNTRIES = ['england', 'scotland', 'wales', 'northern-ireland']
 
+// Reserved paths that should NOT be handled by this dynamic route
+const RESERVED_PATHS = [
+  'business',
+  'login',
+  'auth',
+  'store',
+  'provider',
+  'search',
+  'api',
+  'dashboard',
+  'account',
+  '_next',
+]
+
 // Generate metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { country: countrySlug, city: citySlug } = await params
@@ -79,6 +93,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  */
 export default async function CityPage({ params }: Props) {
   const { country: countrySlug, city: citySlug } = await params
+
+  // Immediately reject reserved paths - these have their own static routes
+  if (RESERVED_PATHS.includes(countrySlug.toLowerCase())) {
+    notFound()
+  }
 
   // Validate country slug
   if (!VALID_COUNTRIES.includes(countrySlug)) {
