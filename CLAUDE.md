@@ -77,20 +77,39 @@ All UI specs are in `docs/specs/`. Reference `00-index.md` for the master list. 
 - Category pages (retail, repair, national)
 - Reusable components (cards, filters, breadcrumbs, maps, reviews)
 
+## Design System
+
+For comprehensive design guidelines including typography, spacing, animations, mobile patterns, and component architecture, see `docs/guides/design-system.md`.
+
 ## Brand Colors
 
-- **Primary:** Red `#ef4444` (CTAs, primary buttons, accents)
-- **Secondary:** Blue `#2563eb` (secondary actions, focus, selection, links)
-- **Secondary Hover:** `#1d4ed8`
-- **Secondary Active:** `#1e40af`
-- **Background Light:** `#f8f6f6`
-- **Surface Light:** `#ffffff`
-- **Text Dark:** `#181111`
-- **Text Muted:** `#6b7280`
-- **Border Light:** `#ebe5e5`
-- **Success:** `#16a34a`
-- **Warning:** `#f59e0b`
-- **Error:** `#dc2626`
+### Primary Brand
+- **Primary:** Coral `#e85d4c` (CTAs, primary buttons, store badges, links)
+- **Primary Hover:** `#d94f3f`
+- **Primary Light:** `rgba(232, 93, 76, 0.1)` (backgrounds, badges)
+
+### Light Mode
+- **Background:** `#f8f6f6` (warm off-white)
+- **Surface:** `#ffffff` (cards, modals, inputs)
+- **Text Primary:** `#181111` (headings, body text)
+- **Text Muted:** `#6b7280` (secondary text, labels)
+- **Border:** `#ebe5e5` (dividers, card borders)
+
+### Dark Mode
+- **Background:** `#0f0d0d` (warm near-black)
+- **Surface:** `#1a1616` (cards, modals)
+- **Text Primary:** `#f5f0f0` (headings, body text)
+- **Text Muted:** `#a8a0a0` (secondary text)
+- **Border:** `#2d2424` (dividers)
+
+### Semantic Colors
+- **Success:** `#16a34a` (verification badges, positive states)
+- **Warning:** `#f59e0b` (star ratings, caution states)
+- **Error:** `#b91c1c` (form errors, destructive actions - distinct from primary)
+- **Info:** `#0ea5e9` (repair badges, informational)
+
+### Focus & Accessibility
+- **Focus Ring:** `rgba(239, 68, 68, 0.5)` (keyboard navigation)
 
 ## Import Aliases
 
