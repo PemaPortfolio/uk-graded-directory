@@ -1055,7 +1055,7 @@ If brand.has_authorised_network = false:
 STYLING:
 ├── Brand logo:      Max 120px width, positioned top-left
 ├── H1:              36px desktop, 28px mobile, font-weight 800
-├── H1 color:        #2563eb (secondary)
+├── H1 color:        #e85d4c (secondary)
 ├── Trust banner:    Green background (#ECFDF5), green border
 ├── Intro:           18px, grey-600
 ├── Mobile:          Logo above H1, stacked vertically

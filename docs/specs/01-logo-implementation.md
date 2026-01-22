@@ -20,7 +20,7 @@ The logo serves as the primary brand identifier and home navigation element acro
 | **Black** | `#000000` | Wordmark text ("GRADED", "APPLIANCE HUB") |
 | **White** | `#FFFFFF` | Inner icon element, reversed variant |
 
-> **Note:** The logo does NOT use Secondary Blue (`#2563eb`). Blue is reserved for UI elements (links, focus states, secondary buttons) — not the logo itself.
+> **Note:** The logo uses its own red (`#ea2a33`), distinct from the UI primary coral (`#e85d4c`). The coral accent color is reserved for CTAs, links, and interactive elements — not the logo itself.
 
 ---
 

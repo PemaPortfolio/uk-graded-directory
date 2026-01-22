@@ -383,7 +383,7 @@ function DetailedRating({
             href={googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-[#2563eb] text-white rounded-lg hover:bg-[#1e40af] transition-colors text-sm font-medium"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-[#e85d4c] text-white rounded-lg hover:bg-[#d94f3f] transition-colors text-sm font-medium"
           >
             <span aria-hidden="true">✏️</span>
             Write a Review

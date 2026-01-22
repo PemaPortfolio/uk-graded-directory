@@ -728,7 +728,7 @@ STYLING:
 ├── Border top:     1px solid #E5E7EB
 ├── Padding top:    12px
 ├── Margin top:     16px
-├── Hover:          Color → #2563eb (secondary)
+├── Hover:          Color → #e85d4c (secondary)
 
 LINK TARGET:
 ─────────────────────────────────────────────────────────────────
@@ -832,7 +832,7 @@ COLOR TOKENS — STORE CARD
 ═══════════════════════════════════════════════════════════════
 
 BRAND COLORS (from brand foundation):
-├── Secondary:           #2563eb    Primary text, links
+├── Secondary:           #e85d4c    Primary text, links
 ├── Red:            #DC2626    Call button, primary CTA
 ├── White:          #FFFFFF    Backgrounds
 
@@ -860,7 +860,7 @@ AFFILIATE/WARRANTY COLORS (Phase 1 Monetization):
 
 INTERACTIVE STATES:
 ├── Hover shadow:   rgba(0,0,0,0.1)
-├── Focus ring:     #2563eb (2px outline)
+├── Focus ring:     #e85d4c (2px outline)
 ├── Active:         Scale 0.98
 
 ═══════════════════════════════════════════════════════════════
@@ -877,7 +877,7 @@ BUSINESS NAME:
 ├── Font size:      20px (desktop), 18px (mobile)
 ├── Font weight:    700
 ├── Line height:    1.3
-├── Color:          #2563eb (secondary)
+├── Color:          #e85d4c (secondary)
 
 RATING:
 ├── Font size:      18px (desktop), 16px (mobile)
@@ -996,7 +996,7 @@ Hover:
 ├── Transition:     all 200ms ease
 
 Focus (keyboard):
-├── Outline:        2px solid #2563eb
+├── Outline:        2px solid #e85d4c
 ├── Outline offset: 2px
 
 FEATURED CARD:
@@ -1011,7 +1011,7 @@ Hover:
 STORE NAME LINK:
 ─────────────────────────────────────────────────────────────────
 Default:
-├── Color:          #2563eb
+├── Color:          #e85d4c
 ├── Text decoration: none
 
 Hover:
@@ -1019,7 +1019,7 @@ Hover:
 ├── Text decoration: underline
 
 Focus:
-├── Outline:        2px solid #2563eb
+├── Outline:        2px solid #e85d4c
 ├── Border radius:  2px
 
 PHONE NUMBER LINK:
@@ -1028,7 +1028,7 @@ Default:
 ├── Color:          #374151
 
 Hover:
-├── Color:          #2563eb
+├── Color:          #e85d4c
 ├── Cursor:         pointer
 
 CALL BUTTON (Primary CTA):
@@ -1054,11 +1054,11 @@ VIEW PROFILE BUTTON (Secondary CTA):
 ─────────────────────────────────────────────────────────────────
 Default:
 ├── Background:     #FFFFFF
-├── Color:          #2563eb
-├── Border:         1px solid #2563eb
+├── Color:          #e85d4c
+├── Border:         1px solid #e85d4c
 
 Hover:
-├── Background:     #2563eb
+├── Background:     #e85d4c
 ├── Color:          #FFFFFF
 
 Active:
@@ -1066,7 +1066,7 @@ Active:
 ├── Transform:      scale(0.98)
 
 Focus:
-├── Outline:        2px solid #2563eb
+├── Outline:        2px solid #e85d4c
 ├── Outline offset: 2px
 
 SERVICE BADGE:
@@ -1261,7 +1261,7 @@ COLOR CONTRAST:
 ─────────────────────────────────────────────────────────────────
 All text must meet 4.5:1 ratio (AA)
 
-├── Secondary (#2563eb) on white:    ✓ 16.67:1
+├── Secondary (#e85d4c) on white:    ✓ 16.67:1
 ├── Grey-600 (#4B5563) on white: ✓ 7.17:1
 ├── Grey-500 (#6B7280) on white: ✓ 5.36:1
 ├── Red (#DC2626) on white:      ✓ 4.53:1 (borderline)

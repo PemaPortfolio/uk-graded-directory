@@ -100,33 +100,55 @@ The header section has been fully specified. Components listed left to right:
 
 ## Brand Foundation
 
+> **Full Design System:** See `docs/guides/design-system.md` for comprehensive guidelines including typography, spacing, animations, mobile patterns, and component architecture.
+
 ### Colors
 
+#### Primary Brand
 | Color | Hex | Usage |
 |-------|-----|-------|
-| Primary | `#ef4444` | CTAs, primary buttons, accents |
-| Secondary | `#2563eb` | Secondary actions, focus, selection, links |
-| Secondary Hover | `#1d4ed8` | Secondary button hover state |
-| Secondary Active | `#1e40af` | Secondary button active state |
-| Background Light | `#f8f6f6` | Page backgrounds |
-| Surface Light | `#ffffff` | Cards, containers |
-| Text Dark | `#181111` | Primary text |
-| Text Muted | `#6b7280` | Secondary text |
-| Border Light | `#ebe5e5` | Light borders |
-| Border Dark | `#392828` | Dark borders |
-| Surface Dark | `#141010` | Dark mode surfaces |
-| Success | `#16a34a` | Success states |
-| Warning | `#f59e0b` | Warning states |
-| Error | `#dc2626` | Error states |
-| Info | `#2563eb` | Info states |
+| Primary | `#e85d4c` | CTAs, primary buttons, store badges, links |
+| Primary Hover | `#d94f3f` | Primary hover states |
+| Primary Light | `rgba(232, 93, 76, 0.1)` | Backgrounds, badges |
+
+#### Light Mode
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Background | `#f8f6f6` | Page backgrounds (warm off-white) |
+| Surface | `#ffffff` | Cards, modals, inputs |
+| Text Primary | `#181111` | Headings, body text |
+| Text Muted | `#6b7280` | Secondary text, labels |
+| Border | `#ebe5e5` | Dividers, card borders |
+
+#### Dark Mode
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Background | `#0f0d0d` | Page backgrounds (warm near-black) |
+| Surface | `#1a1616` | Cards, modals |
+| Text Primary | `#f5f0f0` | Headings, body text |
+| Text Muted | `#a8a0a0` | Secondary text |
+| Border | `#2d2424` | Dividers |
+
+#### Semantic Colors
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Success | `#16a34a` | Verification badges, positive states |
+| Warning | `#f59e0b` | Star ratings, caution states |
+| Error | `#b91c1c` | Form errors, destructive actions |
+| Info | `#0ea5e9` | Repair badges, informational |
+
+#### Focus & Accessibility
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Focus Ring | `rgba(239, 68, 68, 0.5)` | Keyboard navigation |
 
 ### Typography
 
-*(To be defined)*
+See `docs/guides/design-system.md` for typography specifications.
 
 ### Spacing System
 
-*(To be defined)*
+See `docs/guides/design-system.md` for 8-pixel grid spacing system.
 
 ---
 

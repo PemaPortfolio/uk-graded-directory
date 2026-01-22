@@ -456,7 +456,7 @@ SCHEMA.ORG:
 STYLING:
 ├── Font size:       13px
 ├── Color:           #6B7280 (grey)
-├── Link color:      #2563eb (secondary)
+├── Link color:      #e85d4c (secondary)
 ├── Link hover:      Underline
 ├── Separator:       > (grey)
 ├── Margin bottom:   16px
@@ -483,7 +483,7 @@ export default function CountryBreadcrumbs({ country }: Props) {
       {/* Desktop */}
       <ol className="hidden md:flex items-center gap-2 text-sm text-gray-500">
         <li>
-          <Link href="/" className="text-[#2563eb] hover:underline">
+          <Link href="/" className="text-[#e85d4c] hover:underline">
             🏠 Home
           </Link>
         </li>
@@ -492,7 +492,7 @@ export default function CountryBreadcrumbs({ country }: Props) {
       </ol>
 
       {/* Mobile - just back link */}
-      <Link href="/" className="md:hidden flex items-center gap-1 text-[#2563eb] text-sm">
+      <Link href="/" className="md:hidden flex items-center gap-1 text-[#e85d4c] text-sm">
         <span>←</span>
         <span>Home</span>
       </Link>
@@ -542,7 +542,7 @@ STYLING:
 ├── Padding:         32px 24px (desktop), 24px 16px (mobile)
 ├── H1 font size:    36px (desktop), 28px (mobile)
 ├── H1 font weight:  800
-├── H1 color:        #2563eb (secondary)
+├── H1 color:        #e85d4c (secondary)
 ├── Flag emoji:      Before H1, 40px
 ├── Intro text:      18px, #4B5563 (grey-600)
 ├── Stats box:       White background, rounded-lg, shadow-sm
@@ -584,7 +584,7 @@ export default function CountryHero({ country }: Props) {
         {/* H1 with Flag */}
         <div className="flex items-center gap-3 mb-4">
           <span className="text-4xl">{country.flag_emoji}</span>
-          <h1 className="text-2xl md:text-4xl font-extrabold text-[#2563eb]">
+          <h1 className="text-2xl md:text-4xl font-extrabold text-[#e85d4c]">
             {h1}
           </h1>
         </div>
@@ -598,25 +598,25 @@ export default function CountryHero({ country }: Props) {
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-[#2563eb]">
+              <div className="text-2xl md:text-3xl font-bold text-[#e85d4c]">
                 {country.place_count}+
               </div>
               <div className="text-sm text-gray-600">Locations</div>
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-[#2563eb]">
+              <div className="text-2xl md:text-3xl font-bold text-[#e85d4c]">
                 {country.store_count}+
               </div>
               <div className="text-sm text-gray-600">Stores</div>
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-[#2563eb]">
+              <div className="text-2xl md:text-3xl font-bold text-[#e85d4c]">
                 {country.provider_count}+
               </div>
               <div className="text-sm text-gray-600">Engineers</div>
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-[#2563eb]">
+              <div className="text-2xl md:text-3xl font-bold text-[#e85d4c]">
                 30-70%
               </div>
               <div className="text-sm text-gray-600">Savings</div>
@@ -690,7 +690,7 @@ STYLING:
 ├── Gap:             12px 24px
 ├── Link font size:  14px
 ├── Link color:      #4B5563 (grey-600)
-├── Link hover:      #2563eb (secondary), underline
+├── Link hover:      #e85d4c (secondary), underline
 ├── Line height:     1.6 (generous for readability)
 
 ═══════════════════════════════════════════════════════════════
@@ -745,7 +745,7 @@ export default function BrowseByRegionSection({
             <Link
               key={area.id}
               href={`/${countrySlug}/${area.slug}/`}
-              className="text-sm text-gray-600 hover:text-[#2563eb] hover:underline py-1"
+              className="text-sm text-gray-600 hover:text-[#e85d4c] hover:underline py-1"
             >
               {area.name}
             </Link>
@@ -756,7 +756,7 @@ export default function BrowseByRegionSection({
         {hasMore && !showAll && (
           <button
             onClick={() => setShowAll(true)}
-            className="mt-6 text-[#2563eb] font-medium text-sm hover:underline md:hidden"
+            className="mt-6 text-[#e85d4c] font-medium text-sm hover:underline md:hidden"
           >
             Show all {adminAreas.length} regions ▼
           </button>
@@ -847,7 +847,7 @@ export default function PopularCitiesSection({
           </h2>
           <Link
             href={`/${countrySlug}/`}
-            className="text-sm text-[#2563eb] font-medium hover:underline hidden md:block"
+            className="text-sm text-[#e85d4c] font-medium hover:underline hidden md:block"
           >
             View all {totalCities} cities →
           </Link>
@@ -859,9 +859,9 @@ export default function PopularCitiesSection({
             <Link
               key={city.id}
               href={`/${countrySlug}/${city.slug}/`}
-              className="group bg-white border border-gray-200 rounded-lg p-4 hover:border-[#2563eb] hover:shadow-md transition-all"
+              className="group bg-white border border-gray-200 rounded-lg p-4 hover:border-[#e85d4c] hover:shadow-md transition-all"
             >
-              <h3 className="font-semibold text-gray-900 group-hover:text-[#2563eb] mb-2">
+              <h3 className="font-semibold text-gray-900 group-hover:text-[#e85d4c] mb-2">
                 {city.name}
               </h3>
               <div className="text-sm text-gray-600 space-y-1">
@@ -876,7 +876,7 @@ export default function PopularCitiesSection({
         <div className="mt-6 text-center md:hidden">
           <Link
             href={`/${countrySlug}/`}
-            className="text-[#2563eb] font-medium hover:underline"
+            className="text-[#e85d4c] font-medium hover:underline"
           >
             View all {totalCities} cities →
           </Link>
@@ -959,7 +959,7 @@ export default function BrowseByApplianceSection({
           </h2>
           <Link
             href="/appliances/"
-            className="text-sm text-[#2563eb] font-medium hover:underline hidden md:block"
+            className="text-sm text-[#e85d4c] font-medium hover:underline hidden md:block"
           >
             View all categories →
           </Link>
@@ -974,7 +974,7 @@ export default function BrowseByApplianceSection({
               className="group flex flex-col items-center p-3 md:p-4 bg-slate-50 rounded-lg hover:bg-slate-100 hover:shadow-sm transition-all text-center"
             >
               <span className="text-2xl md:text-3xl mb-2">{category.icon}</span>
-              <span className="text-xs md:text-sm font-medium text-gray-700 group-hover:text-[#2563eb]">
+              <span className="text-xs md:text-sm font-medium text-gray-700 group-hover:text-[#e85d4c]">
                 {category.name.split(' ')[0]}
               </span>
             </Link>
@@ -1105,11 +1105,11 @@ export default function OtherCountriesSection({ countries }: Props) {
             <Link
               key={country.slug}
               href={`/${country.slug}/`}
-              className="group bg-white border border-gray-200 rounded-lg p-6 hover:border-[#2563eb] hover:shadow-lg transition-all"
+              className="group bg-white border border-gray-200 rounded-lg p-6 hover:border-[#e85d4c] hover:shadow-lg transition-all"
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">{country.flag_emoji}</span>
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#2563eb]">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#e85d4c]">
                   {country.name}
                 </h3>
               </div>
@@ -1118,7 +1118,7 @@ export default function OtherCountriesSection({ countries }: Props) {
                 <div>{country.store_count}+ stores</div>
                 <div>{country.provider_count} engineers</div>
               </div>
-              <span className="text-[#2563eb] font-medium text-sm group-hover:underline">
+              <span className="text-[#e85d4c] font-medium text-sm group-hover:underline">
                 Browse →
               </span>
             </Link>

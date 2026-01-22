@@ -714,7 +714,7 @@ HOME ICON:
 ├── Accessibility: aria-label="Home" on link
 
 LINK ITEMS (not current page):
-├── Color: #2563eb (secondary — brand primary)
+├── Color: #e85d4c (secondary — brand primary)
 ├── Text decoration: none (default)
 ├── Text decoration on hover: underline
 ├── Cursor: pointer
@@ -741,25 +741,25 @@ INTERACTIVE STATES
 ═══════════════════════════════════════════════════════════════════════════
 
 LINK — DEFAULT:
-├── Color: #2563eb
+├── Color: #e85d4c
 ├── Text decoration: none
 ├── Background: transparent
 
 LINK — HOVER:
-├── Color: #2563eb (unchanged)
+├── Color: #e85d4c (unchanged)
 ├── Text decoration: underline
 ├── Background: transparent
 ├── Transition: text-decoration 150ms ease
 
 LINK — FOCUS (keyboard):
-├── Color: #2563eb
+├── Color: #e85d4c
 ├── Text decoration: underline
-├── Outline: 2px solid #2563eb
+├── Outline: 2px solid #e85d4c
 ├── Outline offset: 2px
 ├── Border radius: 2px (on outline)
 
 LINK — ACTIVE (pressed):
-├── Color: #1e40af (darker secondary)
+├── Color: #d94f3f (darker secondary)
 ├── Text decoration: underline
 
 CURRENT PAGE — ALL STATES:
@@ -1549,7 +1549,7 @@ MEASUREMENTS:
 └── Parent name:
     ├── Font size: 14px
     ├── Font weight: 500
-    ├── Color: #2563eb (secondary)
+    ├── Color: #e85d4c (secondary)
     └── Max width: calc(100% - 30px)
 
 TOUCH TARGET:
@@ -1568,13 +1568,13 @@ MOBILE INTERACTIVE STATES
 
 DEFAULT:
 ├── Background: transparent
-├── Arrow color: #2563eb
-├── Text color: #2563eb
+├── Arrow color: #e85d4c
+├── Text color: #e85d4c
 
 PRESSED (touch):
 ├── Background: #F3F4F6 (gray-100)
-├── Arrow color: #2563eb
-├── Text color: #2563eb
+├── Arrow color: #e85d4c
+├── Text color: #e85d4c
 ├── Transition: background 100ms ease
 
 DISABLED (on homepage):
@@ -1775,7 +1775,7 @@ ENTER KEY:
 ├── Navigates to that page
 
 FOCUS INDICATOR:
-├── Visible outline: 2px solid #2563eb
+├── Visible outline: 2px solid #e85d4c
 ├── Outline offset: 2px
 ├── Clearly distinguishable from non-focused state
 
@@ -1800,7 +1800,7 @@ NOTES:
 COLOR CONTRAST REQUIREMENTS
 ═══════════════════════════════════════════════════════════════════════════
 
-LINK TEXT (#2563eb on white):
+LINK TEXT (#e85d4c on white):
 ├── Contrast ratio: 12.6:1
 ├── Required: 4.5:1 (WCAG AA)
 └── Status: ✓ PASSES
@@ -1815,7 +1815,7 @@ SEPARATOR TEXT (#9CA3AF on white):
 ├── Required: N/A (decorative, aria-hidden)
 └── Status: ✓ N/A (decorative element)
 
-FOCUS INDICATOR (#2563eb outline):
+FOCUS INDICATOR (#e85d4c outline):
 ├── Contrast ratio: 12.6:1 against white
 ├── Required: 3:1 (WCAG 2.1 AA for non-text)
 └── Status: ✓ PASSES
@@ -1975,7 +1975,7 @@ function BreadcrumbItemDesktop({
       {item.href && !isLast ? (
         <Link
           href={item.href}
-          className="text-[#2563eb] hover:underline text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-2 rounded"
+          className="text-[#e85d4c] hover:underline text-sm focus:outline-none focus:ring-2 focus:ring-[#e85d4c] focus:ring-offset-2 rounded"
         >
           {showHomeIcon && isHome ? (
             <>
@@ -2013,7 +2013,7 @@ function MobileBreadcrumb({ items }: { items: BreadcrumbItem[] }) {
     <div className="md:hidden py-3 px-4 border-b border-gray-200 mb-4">
       <Link
         href={parent.href}
-        className="flex items-center gap-1.5 text-[#2563eb] text-sm font-medium active:bg-gray-100 -mx-2 px-2 py-2 rounded transition-colors"
+        className="flex items-center gap-1.5 text-[#e85d4c] text-sm font-medium active:bg-gray-100 -mx-2 px-2 py-2 rounded transition-colors"
       >
         <span aria-hidden="true">←</span>
         <span>{parent.name === 'Home' ? 'Home' : parent.name}</span>
@@ -2331,7 +2331,7 @@ export default async function StoreProfilePage({ params }) {
 
 /* Links */
 .breadcrumb a {
-  color: #2563eb;
+  color: #e85d4c;
   text-decoration: none;
   font-size: 14px;
   transition: text-decoration 150ms ease;
@@ -2342,7 +2342,7 @@ export default async function StoreProfilePage({ params }) {
 }
 
 .breadcrumb a:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #e85d4c;
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -2387,7 +2387,7 @@ export default async function StoreProfilePage({ params }) {
     display: flex;
     align-items: center;
     gap: 6px;
-    color: #2563eb;
+    color: #e85d4c;
     font-size: 14px;
     font-weight: 500;
     padding: 8px;
@@ -2608,7 +2608,7 @@ This breadcrumbs specification integrates with and supersedes breadcrumb definit
 
 **Unified styling (from this spec):**
 - Font size: **14px** (all pages)
-- Link color: **#2563eb** (secondary)
+- Link color: **#e85d4c** (secondary)
 - Current page: **#374151** (gray-700), **font-weight: 500**
 - Separator: **›** (gray-400)
 
@@ -2808,7 +2808,7 @@ SEPARATOR:
 Character: › (U+203A)
 
 COLORS:
-Links: #2563eb (secondary)
+Links: #e85d4c (secondary)
 Current: #374151 (gray-700)
 Separator: #9CA3AF (gray-400)
 

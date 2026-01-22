@@ -40,9 +40,9 @@ https://ukgradedappliances.co.uk/
 | Decision | Choice | Rationale |
 |----------|--------|-----------|
 | **Navbar search** | Hidden on homepage | Avoid duplication; hero search is primary CTA |
-| **Hero background** | Secondary blue gradient `#2563eb → #1d4ed8 → #1e40af` | Brand consistent; uses secondary color palette |
+| **Hero background** | Warm neutral gradient `#f8f6f6 → #ffffff` | Clean, premium feel per design system |
 | **Stats display** | Bento grid in hero | Social proof immediately visible |
-| **Search button** | Red `#ef4444` "Search Nearby →" | Primary CTA uses primary brand color |
+| **Search button** | Coral `#e85d4c` "Search Nearby →" | Primary CTA uses primary brand color |
 | **Dual CTA** | Subtle repair hook | Retail-first, repair discoverable |
 | **H2 headings** | Question-based | AEO optimization for AI search |
 | **Grade explainer** | HTML table + cards | LLM extraction for featured snippets |
@@ -351,12 +351,12 @@ See Section 2 above. Uses Spec 04 with search bar hidden on homepage.
 
 ### 4.2 Hero Section (Redesigned)
 
-**Background:** Secondary blue CSS gradient (brand consistent).
+**Background:** Warm neutral CSS gradient (brand consistent, per design system).
 
 ```css
-/* Hero gradient - uses brand secondary colors */
+/* Hero gradient - uses warm neutral background */
 .hero {
-  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+  background: linear-gradient(180deg, #f8f6f6 0%, #ffffff 100%);
   min-height: 500px;
 }
 ```
@@ -367,21 +367,21 @@ See Section 2 above. Uses Spec 04 with search bar hidden on homepage.
 
 **Trust Badge:**
 ```html
-<div class="inline-flex items-center gap-2 bg-blue-600/20 px-3 py-1 rounded-full text-sm text-blue-300">
+<div class="inline-flex items-center gap-2 bg-[#e85d4c]/10 px-3 py-1 rounded-full text-sm text-[#e85d4c]">
   ⭐ UK's #1 Graded Appliance Directory
 </div>
 ```
 
 **H1 Tag:**
 ```html
-<h1 class="text-4xl md:text-5xl font-bold text-white">
+<h1 class="text-4xl md:text-5xl font-bold text-[#181111]">
   Find Graded Appliances Near You
 </h1>
 ```
 
 **Subheading:**
 ```html
-<p class="text-lg text-slate-300">
+<p class="text-lg text-[#6b7280]">
   Save 30-70% on ex-display, B-grade and factory seconds from verified UK retailers.
 </p>
 ```
@@ -389,7 +389,7 @@ See Section 2 above. Uses Spec 04 with search bar hidden on homepage.
 **Search Bar:**
 - Uses Spec 02 SearchBar with `variant="hero"` (larger size)
 - Placeholder: "Enter your city or postcode (e.g., Manchester, SW1A)"
-- **Button: "Search Nearby →" with RED (`#ef4444`) background** (primary CTA)
+- **Button: "Search Nearby →" with CORAL (`#e85d4c`) background** (primary CTA)
 - Autocomplete enabled
 
 ```html
@@ -397,9 +397,9 @@ See Section 2 above. Uses Spec 04 with search bar hidden on homepage.
   <input
     type="text"
     placeholder="Enter your city or postcode (e.g., Manchester, SW1A)"
-    class="flex-1 h-14 px-4 rounded-lg text-base"
+    class="flex-1 h-14 px-4 rounded-lg text-base border border-[#ebe5e5]"
   />
-  <button class="h-14 px-6 bg-[#ef4444] hover:bg-[#dc2626] text-white rounded-lg font-medium">
+  <button class="h-14 px-6 bg-[#e85d4c] hover:bg-[#d94f3f] text-white rounded-lg font-medium">
     Search Nearby →
   </button>
 </div>
@@ -407,7 +407,7 @@ See Section 2 above. Uses Spec 04 with search bar hidden on homepage.
 
 **Geolocation Button:**
 ```html
-<button class="inline-flex items-center gap-2 text-slate-400 hover:text-white text-sm">
+<button class="inline-flex items-center gap-2 text-[#6b7280] hover:text-[#e85d4c] text-sm">
   📍 Use my location
 </button>
 ```
@@ -415,11 +415,11 @@ See Section 2 above. Uses Spec 04 with search bar hidden on homepage.
 **Quick Category Links:**
 ```html
 <div class="flex flex-wrap gap-2 mt-4">
-  <span class="text-slate-400 text-sm">Quick:</span>
-  <a href="/washing-machines/" class="text-sm text-white hover:text-blue-300">Washing Machines</a>
-  <a href="/fridge-freezers/" class="text-sm text-white hover:text-blue-300">Fridges</a>
-  <a href="/ovens-cookers/" class="text-sm text-white hover:text-blue-300">Ovens</a>
-  <a href="/dishwashers/" class="text-sm text-white hover:text-blue-300">Dishwashers</a>
+  <span class="text-[#6b7280] text-sm">Quick:</span>
+  <a href="/washing-machines/" class="text-sm text-[#181111] hover:text-[#e85d4c]">Washing Machines</a>
+  <a href="/fridge-freezers/" class="text-sm text-[#181111] hover:text-[#e85d4c]">Fridges</a>
+  <a href="/ovens-cookers/" class="text-sm text-[#181111] hover:text-[#e85d4c]">Ovens</a>
+  <a href="/dishwashers/" class="text-sm text-[#181111] hover:text-[#e85d4c]">Dishwashers</a>
 </div>
 ```
 
@@ -644,7 +644,7 @@ LIMIT 1;
       />
       <button
         type="submit"
-        class="h-12 px-6 bg-[#2563eb] hover:bg-[#1d4ed8] text-white rounded-lg font-medium"
+        class="h-12 px-6 bg-[#e85d4c] hover:bg-[#d94f3f] text-white rounded-lg font-medium"
       >
         Get Alerts
       </button>
@@ -964,7 +964,7 @@ ORDER BY
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a
         href="/repair/"
-        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ef4444] hover:bg-[#dc2626] rounded-lg font-medium"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#e85d4c] hover:bg-[#d94f3f] rounded-lg font-medium"
       >
         🔧 Find Repair Engineers
       </a>

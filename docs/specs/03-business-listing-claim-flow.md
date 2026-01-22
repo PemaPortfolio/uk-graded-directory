@@ -38,7 +38,7 @@ STYLE:            Text link with dropdown chevron (▼)
 STYLING:
 ├── Font size:    14px
 ├── Font weight:  500 (medium)
-├── Font color:   #2563eb (secondary)
+├── Font color:   #e85d4c (secondary)
 ├── Hover:        Underline
 ├── Chevron:      12px, rotates 180° when open
 └── Transition:   transform 150ms ease
@@ -249,19 +249,19 @@ CARD STYLING:
 ├── Transition:     all 150ms ease
 
 CARD HOVER:
-├── Border color:   #2563eb (secondary)
+├── Border color:   #e85d4c (secondary)
 ├── Box shadow:     0 4px 12px rgba(1, 33, 105, 0.15)
 └── Transform:      translateY(-2px)
 
 CARD SELECTED:
-├── Border color:   #2563eb (secondary)
+├── Border color:   #e85d4c (secondary)
 ├── Border width:   3px
 └── Background:     #eff6ff (light blue tint)
 
 ICON:
 ├── Size:           48px
 ├── Margin bottom:  16px
-└── Color:          #2563eb
+└── Color:          #e85d4c
 
 TITLE:
 ├── Font size:      18px
@@ -323,7 +323,7 @@ INPUT STYLING:
 ├── Height:         48px
 ├── Padding:        12px 16px
 ├── Border:         1px solid #E5E7EB
-├── Border focus:   2px solid #2563eb
+├── Border focus:   2px solid #e85d4c
 ├── Border radius:  8px
 ├── Font size:      16px
 ├── Width:          100% (max 400px)
@@ -331,11 +331,11 @@ INPUT STYLING:
 BUTTON STYLING:
 ├── Height:         48px
 ├── Width:          100% (max 400px)
-├── Background:     #ef4444 (red)
+├── Background:     #e85d4c (red)
 ├── Color:          #FFFFFF
 ├── Font weight:    600
 ├── Border radius:  8px
-├── Hover:          #dc2626
+├── Hover:          #d94f3f
 
 VALIDATION:
 ├── Postcode: Required, UK format validation
@@ -407,12 +407,12 @@ RESULT CARD STYLING:
 ├── Background:     #FFFFFF
 
 RESULT CARD SELECTED:
-├── Border color:   #2563eb
+├── Border color:   #e85d4c
 └── Background:     #eff6ff
 
 RADIO BUTTON:
 ├── Size:           20px
-├── Color:          #2563eb when selected
+├── Color:          #e85d4c when selected
 └── Position:       Left of content
 
 STATUS BADGE:

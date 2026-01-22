@@ -149,7 +149,7 @@ SCHEMA.ORG:
 STYLING:
 ├── Font size:     13px
 ├── Color:         #6B7280 (grey)
-├── Link color:    #2563eb (secondary)
+├── Link color:    #e85d4c (secondary)
 ├── Separator:     > (with spacing)
 ├── Margin bottom: 16px
 └── Mobile:        Single back arrow + city name
@@ -295,7 +295,7 @@ BADGE STYLING:
 │  └── IF false: Grey (#F3F4F6 bg, #6B7280 text)            │
 │                                                             │
 │  VERIFIED BADGE:                                           │
-│  ├── Background:     #2563eb (secondary)                        │
+│  ├── Background:     #e85d4c (secondary)                        │
 │  ├── Text color:     #FFFFFF                               │
 │  ├── Icon:           ✓ checkmark                           │
 │  └── Text:           "Verified"                            │
@@ -380,7 +380,7 @@ STYLING:
 ├── Z-index:        90
 ├── Buttons:        50% width each, 48px height
 ├── Call button:    Red background (#DC2626)
-├── Website:        Secondary outline (#2563eb)
+├── Website:        Secondary outline (#e85d4c)
 └── Safe area:      padding-bottom for iPhone notch
 
 APPEARS:
@@ -1159,12 +1159,12 @@ COPY BUTTON:
 ├── Hover:           Background #F3F4F6
 
 GET DIRECTIONS BUTTON:
-├── Background:      #2563eb (secondary)
+├── Background:      #e85d4c (secondary)
 ├── Color:           #FFFFFF
 ├── Padding:         8px 16px
 ├── Border radius:   8px
 ├── Font size:       14px
-├── Hover:           Background #1e40af
+├── Hover:           Background #d94f3f
 
 ═══════════════════════════════════════════════════════════════
 ```

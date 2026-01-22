@@ -219,13 +219,13 @@ SUBTEXT (Terms):
 ├── Color:          #6B7280
 ├── Text align:     center
 ├── Margin bottom:  24px
-├── Links:          #2563eb (secondary), underline on hover
+├── Links:          #e85d4c (secondary), underline on hover
 
 INPUT FIELDS:
 ├── Height:         48px
 ├── Padding:        12px 16px
 ├── Border:         1px solid #E5E7EB
-├── Border focus:   2px solid #2563eb
+├── Border focus:   2px solid #e85d4c
 ├── Border radius:  8px
 ├── Font size:      16px
 ├── Width:          100%
@@ -241,7 +241,7 @@ PASSWORD TOGGLE:
 
 FORGOT PASSWORD LINK:
 ├── Font size:      14px
-├── Color:          #2563eb (secondary)
+├── Color:          #e85d4c (secondary)
 ├── Text align:     right
 ├── Margin bottom:  16px
 └── Hover:          underline
@@ -285,7 +285,7 @@ SIGNUP LINK:
 ├── Color:          #6B7280
 ├── Text align:     center
 ├── Margin top:     24px
-└── Link color:     #2563eb (secondary)
+└── Link color:     #e85d4c (secondary)
 
 ═══════════════════════════════════════════════════════════════
 ```

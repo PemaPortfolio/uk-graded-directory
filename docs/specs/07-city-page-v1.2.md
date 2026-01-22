@@ -248,7 +248,7 @@ SCHEMA.ORG:
 STYLING:
 ├── Font size:       13px
 ├── Color:           #6B7280 (grey)
-├── Link color:      #2563eb (secondary)
+├── Link color:      #e85d4c (secondary)
 ├── Link hover:      Underline
 ├── Separator:       > (grey)
 ├── Margin bottom:   16px
@@ -316,7 +316,7 @@ STATS BOX (3 metrics):
 STYLING:
 ├── H1 font size:    36px desktop, 28px mobile
 ├── H1 font weight:  800
-├── H1 color:        #2563eb (secondary)
+├── H1 color:        #e85d4c (secondary)
 ├── Narrative:       18px, #4B5563 (grey-600), prose styling (v1.1)
 ├── Intro text:      18px, #4B5563 (grey-600)
 ├── Stats box:       Background #F8FAFC (slate-50)
@@ -456,7 +456,7 @@ interface HeroProps {
 function CityHero({ place, narrative }: HeroProps) {
   return (
     <section className="mb-8">
-      <h1 className="text-3xl md:text-4xl font-extrabold text-[#2563eb] mb-4">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-[#e85d4c] mb-4">
         {place.h1_heading || `Graded Appliances in ${place.name}`}
       </h1>
       
@@ -848,7 +848,7 @@ LOGO:
 BUSINESS NAME:
 ├── Font size:       20px
 ├── Font weight:     700
-├── Color:           #2563eb (secondary)
+├── Color:           #e85d4c (secondary)
 ├── Link:            → /store/{slug}/
 
 RATING:
@@ -889,8 +889,8 @@ CALL BUTTON:
 
 VIEW PROFILE BUTTON:
 ├── Background:      White
-├── Border:          1px solid #2563eb
-├── Color:           #2563eb (secondary)
+├── Border:          1px solid #e85d4c
+├── Color:           #e85d4c (secondary)
 ├── Padding:         10px 20px
 
 MOBILE:
@@ -1572,7 +1572,7 @@ export default function ZeroStateCitySection({
   return (
     <section id="retailers" className="mb-12">
       {/* Section Header */}
-      <h2 className="text-2xl md:text-3xl font-bold text-[#2563eb] mb-4">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#e85d4c] mb-4">
         🛒 Graded Appliance Retailers in {place.name}
       </h2>
       

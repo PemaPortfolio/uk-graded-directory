@@ -692,7 +692,7 @@ STYLING:
 ─────────────────────────────────────────────────────────────────
 ├── Font size:      14px
 ├── Color:          #6B7280 (grey-500)
-├── Link color:     #2563eb (secondary)
+├── Link color:     #e85d4c (secondary)
 ├── Separator:      " > " or "›"
 ├── Current page:   Not a link, #374151 (grey-700)
 
@@ -733,7 +733,7 @@ STYLING:
 H1:
 ├── Font size:      32px (desktop), 24px (mobile)
 ├── Font weight:    800
-├── Color:          #2563eb (secondary)
+├── Color:          #e85d4c (secondary)
 ├── Line height:    1.2
 ├── Icon:           🔧 (category.icon or default wrench)
 
@@ -1042,7 +1042,7 @@ Container:
 Stat Item:
 ├── Font size:      24px (value), 13px (label)
 ├── Font weight:    700 (value), 500 (label)
-├── Color:          #2563eb (value), #6B7280 (label)
+├── Color:          #e85d4c (value), #6B7280 (label)
 
 ═══════════════════════════════════════════════════════════════
 ```
@@ -1312,10 +1312,10 @@ Button:
 ├── Width:          100% (mobile), auto (desktop)
 ├── Padding:        16px 32px
 ├── Background:     White
-├── Border:         2px solid #2563eb
-├── Color:          #2563eb
+├── Border:         2px solid #e85d4c
+├── Color:          #e85d4c
 ├── Font weight:    600
-├── Hover:          Background #2563eb, Color white
+├── Hover:          Background #e85d4c, Color white
 
 ═══════════════════════════════════════════════════════════════
 ```

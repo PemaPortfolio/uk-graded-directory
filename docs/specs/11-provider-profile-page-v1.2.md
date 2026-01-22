@@ -568,7 +568,7 @@ STYLING:
 ─────────────────────────────────────────────────────────────────
 ├── Font size:      14px
 ├── Color:          #6B7280 (grey-500)
-├── Link color:     #2563eb (secondary)
+├── Link color:     #e85d4c (secondary)
 ├── Separator:      " > " or "›"
 ├── Current page:   Not a link, #374151 (grey-700)
 ├── Container:      bg-white, border-b, py-3
@@ -627,7 +627,7 @@ HERO ELEMENTS:
 2. PROVIDER NAME
    ├── Font: 28px (desktop), 22px (mobile)
    ├── Weight: 800
-   ├── Color: #2563eb (secondary)
+   ├── Color: #e85d4c (secondary)
 
 3. RATING DISPLAY
    ├── Stars: Yellow (#F59E0B)
@@ -914,7 +914,7 @@ Card:
 ├── Border:         1px solid #E5E7EB
 ├── Border radius:  12px
 ├── Padding:        20px
-├── Hover:          Border color #2563eb, shadow
+├── Hover:          Border color #e85d4c, shadow
 
 Grid:
 ├── Desktop: 3 columns

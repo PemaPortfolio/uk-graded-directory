@@ -30,8 +30,8 @@ The Search Bar is the primary navigation and discovery tool for the UK Graded Ap
 
 | Color | Hex | Usage in Search Bar |
 |-------|-----|---------------------|
-| Secondary Blue | `#2563eb` | Input borders, text, icons |
-| Primary Red | `#ef4444` | Search button, filter pill active state |
+| Primary Coral | `#e85d4c` | Search button, filter pill active state, focus borders |
+| Primary Hover | `#d94f3f` | Button hover states |
 | White | `#FFFFFF` | Input backgrounds, button text |
 | Light Grey | `#F3F4F6` | Input backgrounds (alternative), hover states |
 
@@ -107,7 +107,7 @@ STYLING:
 ├── Height:       48px (touch-friendly)
 ├── Padding:      12px 16px
 ├── Border:       1px solid #E5E7EB (grey-200)
-├── Border focus: 2px solid #2563eb (secondary)
+├── Border focus: 2px solid #e85d4c (secondary)
 ├── Border radius:8px (left side only on desktop when grouped)
 ├── Background:   #FFFFFF
 ├── Font size:    16px (prevents iOS zoom)
@@ -156,7 +156,7 @@ STYLING:
 ├── Height:       48px
 ├── Padding:      12px 44px 12px 16px (extra right for icon)
 ├── Border:       1px solid #E5E7EB
-├── Border focus: 2px solid #2563eb
+├── Border focus: 2px solid #e85d4c
 ├── Border radius:0 (middle of group) or 8px (standalone mobile)
 ├── Background:   #FFFFFF
 ├── Font size:    16px
@@ -178,7 +178,7 @@ HTML ATTRIBUTES (Mobile Optimized):
 GEOLOCATION BUTTON (Desktop):
 ├── Separate link below inputs: "📍 Use my location"
 ├── Font size:    14px
-├── Color:        #2563eb (secondary)
+├── Color:        #e85d4c (secondary)
 ├── Hover:        Underline
 └── On click:     Request browser geolocation
 
@@ -210,8 +210,8 @@ DIMENSIONS:
 
 STYLING:
 ├── Height:       48px
-├── Background:   #ef4444 (red)
-├── Background hover: #dc2626 (red-600, darker)
+├── Background:   #e85d4c (red)
+├── Background hover: #d94f3f (red-600, darker)
 ├── Border:       none
 ├── Border radius:8px (right side only on desktop) or 8px (standalone)
 ├── Font size:    16px
@@ -225,9 +225,9 @@ ICON:
 └── Or icon only on smaller viewports
 
 STATES:
-├── Default:      #ef4444
-├── Hover:        #dc2626
-├── Focus:        #dc2626 + 2px secondary outline
+├── Default:      #e85d4c
+├── Hover:        #d94f3f
+├── Focus:        #d94f3f + 2px secondary outline
 ├── Active:       #b91c1c (red-700)
 └── Disabled:     #FCA5A5 (red-300), cursor not-allowed
 
@@ -264,8 +264,8 @@ STYLING (Inactive):
 └── Cursor:       pointer
 
 STYLING (Active):
-├── Background:   #ef4444 (red)
-├── Border:       1px solid #ef4444
+├── Background:   #e85d4c (red)
+├── Border:       1px solid #e85d4c
 ├── Font color:   #FFFFFF
 └── Font weight:  600 (semibold)
 
@@ -1027,8 +1027,8 @@ SCREEN READER ANNOUNCEMENTS:
 
 COLOR CONTRAST (All pass WCAG AA):
 ├── Text on white: #111827 = 15.8:1 ✅
-├── White on red: #FFFFFF on #ef4444 = 4.5:1 ✅
-└── Secondary on white: #2563eb = 4.5:1 ✅
+├── White on red: #FFFFFF on #e85d4c = 4.5:1 ✅
+└── Secondary on white: #e85d4c = 4.5:1 ✅
 
 ═══════════════════════════════════════════════════════════════
 ```

@@ -332,7 +332,7 @@ export function SingleLocationMap({
           href={directionsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 px-4 py-3 bg-[#2563eb] text-white rounded-lg hover:bg-[#1e40af] transition-colors min-h-[44px]"
+          className="flex items-center justify-center gap-2 px-4 py-3 bg-[#e85d4c] text-white rounded-lg hover:bg-[#d94f3f] transition-colors min-h-[44px]"
         >
           <span aria-hidden="true">📍</span>
           Get Directions
@@ -571,14 +571,14 @@ List Active:
 ┌──────────┬──────────┐
 │ ☰ List   │ 🗺️ Map  │
 │ ━━━━━━━━ │          │  ← Underline indicates active
-│ #2563eb  │ #6B7280  │
+│ #e85d4c  │ #6B7280  │
 └──────────┴──────────┘
 
 Map Active:
 ┌──────────┬──────────┐
 │ ☰ List   │ 🗺️ Map  │
 │          │ ━━━━━━━━ │
-│ #6B7280  │ #2563eb  │
+│ #6B7280  │ #e85d4c  │
 └──────────┴──────────┘
 
 STYLING:
@@ -586,7 +586,7 @@ STYLING:
 ├── Button width: Equal (50% each)
 ├── Button padding: 8px 16px
 ├── Font size: 14px
-├── Active: Secondary text (#2563eb), 2px bottom border
+├── Active: Secondary text (#e85d4c), 2px bottom border
 ├── Inactive: Gray text (#6B7280), no border
 ├── Hover: Light gray background (#F9FAFB)
 ├── Touch target: 44px minimum height
@@ -618,7 +618,7 @@ STORE MARKER (Default):
         ▼     ← Pin point
 
 SVG SPECIFICATION:
-├── Pin color: #2563eb (secondary)
+├── Pin color: #e85d4c (secondary)
 ├── Icon: Shopping bag or store icon
 ├── Size: 32×40px
 ├── Anchor: Bottom center (pin point)
@@ -658,7 +658,7 @@ CLUSTER MARKER:
 
 SPECIFICATION:
 ├── Shape: Circle
-├── Background: #2563eb (secondary)
+├── Background: #e85d4c (secondary)
 ├── Text color: White
 ├── Font: Bold, 14px
 ├── Size varies by count:
@@ -967,7 +967,7 @@ function MarkerPopupContent({ location }: { location: Location }) {
       {/* CTA */}
       <a
         href={`/${location.type}/${location.slug}/`}
-        className="block w-full text-center py-2 px-4 bg-[#2563eb] text-white text-sm font-medium rounded-lg hover:bg-[#1e40af] transition-colors"
+        className="block w-full text-center py-2 px-4 bg-[#e85d4c] text-white text-sm font-medium rounded-lg hover:bg-[#d94f3f] transition-colors"
       >
         View Profile →
       </a>
@@ -1006,7 +1006,7 @@ L.Icon.Default.mergeOptions({
 ```svg
 <!-- public/markers/store-marker.svg -->
 <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 0C7.163 0 0 7.163 0 16c0 10 16 24 16 24s16-14 16-24c0-8.837-7.163-16-16-16z" fill="#2563eb"/>
+  <path d="M16 0C7.163 0 0 7.163 0 16c0 10 16 24 16 24s16-14 16-24c0-8.837-7.163-16-16-16z" fill="#e85d4c"/>
   <circle cx="16" cy="14" r="8" fill="white"/>
   <text x="16" y="18" text-anchor="middle" font-size="12">🏪</text>
 </svg>
@@ -1083,7 +1083,7 @@ export function ViewToggle({
           px-4 py-2 text-sm font-medium flex items-center gap-2 min-h-[44px]
           transition-colors
           ${view === 'list'
-            ? 'text-[#2563eb] border-b-2 border-[#2563eb] bg-blue-50'
+            ? 'text-[#e85d4c] border-b-2 border-[#e85d4c] bg-blue-50'
             : 'text-gray-500 hover:bg-gray-50'
           }
         `}
@@ -1099,7 +1099,7 @@ export function ViewToggle({
           px-4 py-2 text-sm font-medium flex items-center gap-2 min-h-[44px]
           transition-colors
           ${view === 'map'
-            ? 'text-[#2563eb] border-b-2 border-[#2563eb] bg-blue-50'
+            ? 'text-[#e85d4c] border-b-2 border-[#e85d4c] bg-blue-50'
             : 'text-gray-500 hover:bg-gray-50'
           }
         `}
@@ -1944,7 +1944,7 @@ MULTI-LOCATION (Listing Pages):
 └── Attribution: Required (© OpenStreetMap contributors)
 
 MARKER COLORS:
-├── Store: #2563eb (secondary)
+├── Store: #e85d4c (secondary)
 ├── Provider: #059669 (green)
 ├── Featured: #F59E0B (gold)
 

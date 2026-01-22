@@ -680,7 +680,7 @@ HERO SECTION
 .hero h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2563eb; /* Secondary */
+  color: #e85d4c; /* Secondary */
   margin-bottom: 1rem;
 }
 
@@ -732,7 +732,7 @@ HERO SECTION
 .hero-stat-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #e85d4c;
 }
 
 .hero-stat-label {
@@ -742,7 +742,7 @@ HERO SECTION
 
 /* CTA button */
 .hero-cta {
-  background: #ef4444;
+  background: #e85d4c;
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -754,7 +754,7 @@ HERO SECTION
 }
 
 .hero-cta:hover {
-  background: #dc2626;
+  background: #d94f3f;
 }
 ```
 

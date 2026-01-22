@@ -1266,11 +1266,11 @@ TRIGGER BUTTON:
 ├── Cursor:           pointer
 
 TRIGGER BUTTON (hover):
-├── Border color:     #2563eb (secondary)
+├── Border color:     #e85d4c (secondary)
 ├── Background:       #F9FAFB (gray-50)
 
 TRIGGER BUTTON (active/has selection):
-├── Border color:     #2563eb (secondary)
+├── Border color:     #e85d4c (secondary)
 ├── Border width:     2px
 ├── Background:       #EFF6FF (blue-50)
 
@@ -1318,7 +1318,7 @@ CHECKBOX:
 ├── Size:             18px × 18px
 ├── Border:           2px solid #D1D5DB
 ├── Border radius:    4px
-├── Checked bg:       #2563eb (secondary)
+├── Checked bg:       #e85d4c (secondary)
 ├── Checkmark:        white, 2px stroke
 
 COUNT BADGE:
@@ -1390,14 +1390,14 @@ CHECKBOX ITEM (hover):
 ├── Border color:     #BFDBFE (blue-200)
 
 CHECKBOX ITEM (checked):
-├── Background:       #2563eb (secondary)
-├── Border color:     #2563eb
+├── Background:       #e85d4c (secondary)
+├── Border color:     #e85d4c
 ├── Color:            #FFFFFF
 
 CHECKBOX INPUT:
 ├── Width:            16px
 ├── Height:           16px
-├── Accent color:     #2563eb
+├── Accent color:     #e85d4c
 
 LABEL:
 ├── Font size:        14px
@@ -1458,7 +1458,7 @@ INPUT BOXES:
 ├── Color:            #374151
 
 INPUT BOX (focus):
-├── Border color:     #2563eb
+├── Border color:     #e85d4c
 ├── Outline:          none
 
 SLIDER TRACK:
@@ -1468,13 +1468,13 @@ SLIDER TRACK:
 ├── Margin:           20px 0
 
 SLIDER RANGE (selected):
-├── Background:       #2563eb (secondary)
+├── Background:       #e85d4c (secondary)
 
 SLIDER THUMB:
 ├── Width:            20px
 ├── Height:           20px
 ├── Background:       #FFFFFF
-├── Border:           2px solid #2563eb
+├── Border:           2px solid #e85d4c
 ├── Border radius:    50%
 ├── Box shadow:       0 2px 4px rgba(0,0,0,0.1)
 ├── Cursor:           grab
@@ -1533,7 +1533,7 @@ TRIGGER:
 
 TRIGGER (hover):
 ├── Background:       #F9FAFB
-├── Border color:     #2563eb
+├── Border color:     #e85d4c
 
 TRIGGER LABEL:
 ├── Font size:        13px
@@ -1542,7 +1542,7 @@ TRIGGER LABEL:
 
 TRIGGER VALUE:
 ├── Font weight:      600
-├── Color:            #2563eb
+├── Color:            #e85d4c
 
 DROPDOWN:
 ├── Position:         absolute
@@ -1568,12 +1568,12 @@ OPTION (hover):
 ├── Background:       #F3F4F6
 
 OPTION (selected):
-├── Color:            #2563eb
+├── Color:            #e85d4c
 ├── Font weight:      600
 ├── Background:       #EFF6FF
 
 CHECKMARK:
-├── Color:            #2563eb
+├── Color:            #e85d4c
 ├── Font size:        16px
 
 ═══════════════════════════════════════════════════════════════
@@ -1618,7 +1618,7 @@ RESULT COUNT:
 
 RESULT COUNT NUMBER:
 ├── Font weight:      600
-├── Color:            #2563eb
+├── Color:            #e85d4c
 
 FILTER TAG:
 ├── Display:          inline-flex
@@ -1732,7 +1732,7 @@ DESCRIPTION:
 
 CLEAR BUTTON:
 ├── Padding:          12px 32px
-├── Background:       #2563eb (secondary)
+├── Background:       #e85d4c (secondary)
 ├── Color:            #FFFFFF
 ├── Border:           none
 ├── Border radius:    8px
@@ -1741,7 +1741,7 @@ CLEAR BUTTON:
 ├── Cursor:           pointer
 
 CLEAR BUTTON (hover):
-├── Background:       #1e40af (darker secondary)
+├── Background:       #d94f3f (darker secondary)
 
 DIVIDER:
 ├── Display:          flex
@@ -1769,12 +1769,12 @@ NEARBY CITY CARD:
 ├── Cursor:           pointer
 
 NEARBY CITY CARD (hover):
-├── Border color:     #2563eb
+├── Border color:     #e85d4c
 ├── Background:       #EFF6FF
 
 BROWSE ALL LINK:
 ├── Font size:        14px
-├── Color:            #2563eb
+├── Color:            #e85d4c
 ├── Text decoration:  underline
 ├── Margin top:       24px
 
@@ -1918,8 +1918,8 @@ CHIP:
 ├── Min height:       44px (touch target)
 
 CHIP (active):
-├── Background:       #2563eb (secondary)
-├── Border color:     #2563eb
+├── Background:       #e85d4c (secondary)
+├── Border color:     #e85d4c
 ├── Color:            #FFFFFF
 
 CHIP (pressed):
@@ -1991,7 +1991,7 @@ FILTER BUTTON:
 ├── Color:            #374151
 
 FILTER BUTTON (has active):
-├── Border color:     #2563eb
+├── Border color:     #e85d4c
 ├── Border width:     2px
 ├── Background:       #EFF6FF
 
@@ -2024,7 +2024,7 @@ SORT BUTTON LABEL:
 
 SORT BUTTON VALUE:
 ├── Font weight:      600
-├── Color:            #2563eb
+├── Color:            #e85d4c
 
 ═══════════════════════════════════════════════════════════════
 ```
@@ -2192,7 +2192,7 @@ CLEAR BUTTON:
 APPLY BUTTON:
 ├── Flex:             2
 ├── Height:           48px
-├── Background:       #2563eb (secondary)
+├── Background:       #e85d4c (secondary)
 ├── Border:           none
 ├── Border radius:    8px
 ├── Font size:        16px
@@ -2267,7 +2267,7 @@ OPTION ROW:
 
 OPTION ROW (selected):
 ├── Background:       #EFF6FF
-├── Border:           2px solid #2563eb
+├── Border:           2px solid #e85d4c
 
 RADIO:
 ├── Width:            20px
@@ -2277,8 +2277,8 @@ RADIO:
 ├── Margin right:     12px
 
 RADIO (selected):
-├── Border color:     #2563eb
-├── Background:       #2563eb (with inner white dot)
+├── Border color:     #e85d4c
+├── Background:       #e85d4c (with inner white dot)
 
 LABEL:
 ├── Font size:        16px
@@ -2286,7 +2286,7 @@ LABEL:
 
 CHECKMARK:
 ├── Margin left:      auto
-├── Color:            #2563eb
+├── Color:            #e85d4c
 ├── Font size:        20px
 
 ═══════════════════════════════════════════════════════════════
@@ -2727,7 +2727,7 @@ FOCUS INDICATOR STYLING:
 
 /* All interactive elements */
 :focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #e85d4c;
   outline-offset: 2px;
 }
 
@@ -2738,20 +2738,20 @@ FOCUS INDICATOR STYLING:
 
 /* Filter dropdown trigger */
 .filter-trigger:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #e85d4c;
   outline-offset: 2px;
-  border-color: #2563eb;
+  border-color: #e85d4c;
 }
 
 /* Checkbox */
 input[type="checkbox"]:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #e85d4c;
   outline-offset: 2px;
 }
 
 /* Range slider thumb */
 input[type="range"]:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 5px #2563eb;
+  box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 5px #e85d4c;
 }
 
 FOCUS TRAP FOR MODALS:
@@ -4573,7 +4573,7 @@ module.exports = {
     extend: {
       colors: {
         'filter-active': '#EFF6FF',
-        'filter-border-active': '#2563eb',
+        'filter-border-active': '#e85d4c',
         'filter-count': '#6B7280',
       },
       spacing: {

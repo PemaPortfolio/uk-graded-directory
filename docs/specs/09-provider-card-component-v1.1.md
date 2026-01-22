@@ -1630,7 +1630,7 @@ COLOR TOKENS — PROVIDER CARD
 ═══════════════════════════════════════════════════════════════
 
 BRAND COLORS:
-├── Secondary:           #2563eb    Primary text, links
+├── Secondary:           #e85d4c    Primary text, links
 ├── Red:            #DC2626    Call button (urgent)
 ├── White:          #FFFFFF    Backgrounds
 
@@ -1674,7 +1674,7 @@ PROVIDER NAME:
 ├── Font size:      20px (desktop), 18px (mobile)
 ├── Font weight:    700
 ├── Line height:    1.3
-├── Color:          #2563eb (secondary)
+├── Color:          #e85d4c (secondary)
 
 RATING:
 ├── Font size:      18px (desktop), 16px (mobile)
@@ -1695,7 +1695,7 @@ DESCRIPTION:
 REPAIR CATEGORIES:
 ├── Font size:      14px
 ├── Font weight:    500
-├── Color:          #2563eb (secondary) — links
+├── Color:          #e85d4c (secondary) — links
 ├── Decoration:     Underline on hover
 
 SECTION LABELS:
