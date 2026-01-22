@@ -1,7 +1,7 @@
 # SPECIFICATION 12: HOMEPAGE
 
 ## UK Graded Appliances Directory
-**Version:** 2.0 — LOCKED
+**Version:** 2.1 — LOCKED
 **Status:** ✅ APPROVED
 **Last Updated:** January 2026
 **Dependencies:** Spec 01 (Logo), Spec 02 (Search Bar), Spec 03 (Business/Claim), Spec 04 (Auth), Spec 05 (Footer)
@@ -114,40 +114,34 @@ OTHER PAGES NAVBAR:
 
 ## 3. PAGE STRUCTURE
 
-### 3.1 Section Overview (13 Sections)
+### 3.1 Section Overview (12 Sections)
 
 ```
 HOMEPAGE STRUCTURE v2.0
-├── Section 1:  Announcement Bar (NEW - seasonal campaigns)
-├── Section 2:  Header/Navbar (Spec 04 variant - no search)
-├── Section 3:  Hero (redesigned + Bento stats)
-├── Section 4:  Live Market Pulse (NEW - freshness signals)
-├── Section 5:  Grade Explainer (NEW - AEO-critical)
-├── Section 6:  Deal Alert CTA (NEW - lead capture)
-├── Section 7:  Categories (enhanced with tiers)
-├── Section 8:  Location Navigator (merged cities + countries)
-├── Section 9:  Benefits (reduced to 4 cards)
-├── Section 10: Popular Brands (NEW)
-├── Section 11: Repair Services CTA (NEW)
-├── Section 12: FAQ (updated questions)
-└── Section 13: Footer (Spec 05)
+├── Section 1:  Header/Navbar (Spec 04 variant - no search)
+├── Section 2:  Hero (redesigned + Bento stats)
+├── Section 3:  Live Market Pulse (NEW - freshness signals)
+├── Section 4:  Grade Explainer (NEW - AEO-critical)
+├── Section 5:  Deal Alert CTA (NEW - lead capture)
+├── Section 6:  Categories (enhanced with tiers)
+├── Section 7:  Location Navigator (merged cities + countries)
+├── Section 8:  Benefits (reduced to 4 cards)
+├── Section 9:  Popular Brands (NEW)
+├── Section 10: Repair Services CTA (NEW)
+├── Section 11: FAQ (updated questions)
+└── Section 12: Footer (Spec 05)
 ```
 
 ### 3.2 Complete Page Layout
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ SECTION 1: ANNOUNCEMENT BAR (Conditional)                                   │
-│ ┌─────────────────────────────────────────────────────────────────────────┐ │
-│ │  🔥 January Sale: 412 new deals added this week — Shop Now →           │ │
-│ └─────────────────────────────────────────────────────────────────────────┘ │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 2: NAVBAR                                                           │
+│ SECTION 1: NAVBAR                                                           │
 │ ┌─────────────────────────────────────────────────────────────────────────┐ │
 │ │  [LOGO]                                       For Business ▼    Log in  │ │
 │ └─────────────────────────────────────────────────────────────────────────┘ │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 3: HERO (Dark Navy Gradient Background)                             │
+│ SECTION 2: HERO (Blue Gradient Background)                                  │
 │ ┌─────────────────────────────────────────────────────────────────────────┐ │
 │ │                                                                         │ │
 │ │  ┌─────────────────────────────────┬─────────────────────────────────┐ │ │
@@ -181,13 +175,13 @@ HOMEPAGE STRUCTURE v2.0
 │ │                                                                         │ │
 │ └─────────────────────────────────────────────────────────────────────────┘ │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 4: LIVE MARKET PULSE                                                │
+│ SECTION 3: LIVE MARKET PULSE                                                │
 │ ┌─────────────────────────────────────────────────────────────────────────┐ │
 │ │  📈 This Week: 89 new stores listed • 412 deals added • Manchester     │ │
 │ │                trending (+15%)                                         │ │
 │ └─────────────────────────────────────────────────────────────────────────┘ │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 5: GRADE EXPLAINER (AEO-Critical)                                   │
+│ SECTION 4: GRADE EXPLAINER (AEO-Critical)                                   │
 │                                                                             │
 │   What is a Graded Appliance?                                              │
 │                                                                             │
@@ -210,7 +204,7 @@ HOMEPAGE STRUCTURE v2.0
 │   └─────────┘ └─────────┘ └─────────┘ └─────────┘                         │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 6: DEAL ALERT CTA                                                   │
+│ SECTION 5: DEAL ALERT CTA                                                   │
 │ ┌─────────────────────────────────────────────────────────────────────────┐ │
 │ │  🔔 Get Deal Alerts                                                     │ │
 │ │  Be first to know about new graded deals in your area                  │ │
@@ -220,7 +214,7 @@ HOMEPAGE STRUCTURE v2.0
 │ │  ✓ No spam  ✓ Unsubscribe anytime  ✓ Weekly digest                    │ │
 │ └─────────────────────────────────────────────────────────────────────────┘ │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 7: CATEGORIES                                                       │
+│ SECTION 6: CATEGORIES                                                       │
 │                                                                             │
 │   What Types of Graded Appliances Can You Buy?                             │
 │                                                                             │
@@ -241,7 +235,7 @@ HOMEPAGE STRUCTURE v2.0
 │   └─────────────┘ └─────────────┘ └─────────────┘                         │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 8: LOCATION NAVIGATOR                                               │
+│ SECTION 7: LOCATION NAVIGATOR                                               │
 │                                                                             │
 │   Where Can You Find Graded Appliance Stores?                              │
 │                                                                             │
@@ -264,7 +258,7 @@ HOMEPAGE STRUCTURE v2.0
 │                         [View all 156 cities →]                            │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 9: BENEFITS                                                         │
+│ SECTION 8: BENEFITS                                                         │
 │                                                                             │
 │   Why Should You Buy Graded Appliances?                                    │
 │                                                                             │
@@ -287,7 +281,7 @@ HOMEPAGE STRUCTURE v2.0
 │   └───────────────────┘ └───────────────────┘                              │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 10: POPULAR BRANDS                                                  │
+│ SECTION 9: POPULAR BRANDS                                                   │
 │                                                                             │
 │   Which Brands Sell Graded Appliances?                                     │
 │                                                                             │
@@ -304,7 +298,7 @@ HOMEPAGE STRUCTURE v2.0
 │                         [View all 27+ brands →]                            │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 11: REPAIR SERVICES CTA                                             │
+│ SECTION 10: REPAIR SERVICES CTA                                             │
 │                                                                             │
 │   Need Appliance Repair Instead?                                           │
 │                                                                             │
@@ -322,7 +316,7 @@ HOMEPAGE STRUCTURE v2.0
 │   └─────────────────────────────────────────────────────────────────────┘ │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 12: FAQ                                                             │
+│ SECTION 11: FAQ                                                             │
 │                                                                             │
 │   Common Questions About Graded Appliances                                 │
 │                                                                             │
@@ -341,7 +335,7 @@ HOMEPAGE STRUCTURE v2.0
 │                        [Read our complete guide →]                         │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 13: FOOTER (Spec 05)                                                │
+│ SECTION 12: FOOTER (Spec 05)                                                │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -349,59 +343,13 @@ HOMEPAGE STRUCTURE v2.0
 
 ## 4. DETAILED SECTION SPECIFICATIONS
 
-### 4.1 Announcement Bar (NEW)
-
-**Purpose:** Display seasonal campaigns, promotions, or freshness signals.
-
-**Visibility:** Conditional — only shown when active campaign exists in database.
-
-**Wireframe:**
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  🔥 January Sale: 412 new deals added this week — Shop Now →               │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
-**Styling:**
-```css
-.announcement-bar {
-  background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
-  color: white;
-  padding: 10px 16px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.announcement-bar a {
-  color: white;
-  text-decoration: underline;
-  margin-left: 8px;
-}
-```
-
-**Data Source:**
-```sql
-SELECT message, link_url, link_text, is_active
-FROM announcements
-WHERE is_active = true
-  AND start_date <= NOW()
-  AND (end_date IS NULL OR end_date >= NOW())
-ORDER BY priority DESC
-LIMIT 1;
-```
-
-**Dismissal:** Optional close button (X) that sets a cookie to hide for 24 hours.
-
----
-
-### 4.2 Header/Navbar
+### 4.1 Header/Navbar
 
 See Section 2 above. Uses Spec 04 with search bar hidden on homepage.
 
 ---
 
-### 4.3 Hero Section (Redesigned)
+### 4.2 Hero Section (Redesigned)
 
 **Background:** Secondary blue CSS gradient (brand consistent).
 
@@ -513,7 +461,7 @@ See Section 2 above. Uses Spec 04 with search bar hidden on homepage.
 
 ---
 
-### 4.4 Live Market Pulse (NEW)
+### 4.3 Live Market Pulse (NEW)
 
 **Purpose:** Display freshness signals from database to show platform activity.
 
@@ -578,7 +526,7 @@ LIMIT 1;
 
 ---
 
-### 4.5 Grade Explainer (NEW — AEO-Critical)
+### 4.4 Grade Explainer (NEW — AEO-Critical)
 
 **Purpose:** Define graded appliances for SEO featured snippets and AI/LLM extraction.
 
@@ -663,7 +611,7 @@ LIMIT 1;
 
 ---
 
-### 4.6 Deal Alert CTA (NEW)
+### 4.5 Deal Alert CTA (NEW)
 
 **Purpose:** Lead capture for email marketing and deal notifications.
 
@@ -715,7 +663,7 @@ LIMIT 1;
 
 ---
 
-### 4.7 Categories (Enhanced)
+### 4.6 Categories (Enhanced)
 
 **Purpose:** Internal links to category pages with tier system.
 
@@ -778,7 +726,7 @@ GROUP BY c.id;
 
 ---
 
-### 4.8 Location Navigator (Merged Cities + Countries)
+### 4.7 Location Navigator (Merged Cities + Countries)
 
 **Purpose:** Combined navigation for cities and countries with tab interface.
 
@@ -863,7 +811,7 @@ LIMIT 60;
 
 ---
 
-### 4.9 Benefits (Reduced to 4 Cards)
+### 4.8 Benefits (Reduced to 4 Cards)
 
 **Purpose:** Education and trust building with focused messaging.
 
@@ -899,7 +847,7 @@ LIMIT 60;
 
 ---
 
-### 4.10 Popular Brands (NEW)
+### 4.9 Popular Brands (NEW)
 
 **Purpose:** Showcase well-known brands to build trust and target brand keywords.
 
@@ -977,7 +925,7 @@ ORDER BY
 
 ---
 
-### 4.11 Repair Services CTA (NEW)
+### 4.10 Repair Services CTA (NEW)
 
 **Purpose:** Dedicated section for repair services with trust signals.
 
@@ -1033,7 +981,7 @@ ORDER BY
 
 ---
 
-### 4.12 FAQ Section (Updated)
+### 4.11 FAQ Section (Updated)
 
 **Purpose:** SEO (featured snippets), AEO (AI search engines), user education.
 
@@ -1083,7 +1031,7 @@ ORDER BY
 
 ---
 
-### 4.13 Footer (Spec 05)
+### 4.12 Footer (Spec 05)
 
 **Reference:** See Specification 05 for complete footer implementation.
 
@@ -1355,8 +1303,6 @@ Additional copy can be added to introductory paragraphs in each section to reach
 
 ```
 ┌────────────────────────────────┐
-│ 🔥 January Sale — Shop Now    │ ← Announcement bar
-├────────────────────────────────┤
 │ [LOGO]       [Biz ▼] [Login]  │ ← Compact navbar, no search
 ├────────────────────────────────┤
 │                                │
@@ -1493,7 +1439,6 @@ async function getHomepageData() {
   const supabase = createClient();
 
   const [
-    announcement,
     stats,
     marketPulse,
     cities,
@@ -1501,17 +1446,6 @@ async function getHomepageData() {
     countries,
     brands,
   ] = await Promise.all([
-    // Active announcement
-    supabase
-      .from('announcements')
-      .select('message, link_url, link_text')
-      .eq('is_active', true)
-      .lte('start_date', new Date().toISOString())
-      .or(`end_date.is.null,end_date.gte.${new Date().toISOString()}`)
-      .order('priority', { ascending: false })
-      .limit(1)
-      .single(),
-
     // Stats
     Promise.all([
       supabase.from('stores').select('id', { count: 'exact', head: true }),
@@ -1561,7 +1495,6 @@ async function getHomepageData() {
   ]);
 
   return {
-    announcement: announcement.data,
     stats: {
       stores: stats[0].count || 0,
       cities: stats[1].count || 0,
@@ -1581,8 +1514,6 @@ async function getHomepageData() {
 ## 12. TESTING CHECKLIST
 
 ### Functional
-- [ ] Announcement bar displays when active campaign exists
-- [ ] Announcement bar hidden when no active campaign
 - [ ] Navbar search hidden on homepage
 - [ ] Navbar search visible on other pages
 - [ ] Hero search works with autocomplete
@@ -1636,6 +1567,7 @@ async function getHomepageData() {
 |------|---------|--------|
 | Jan 2026 | v1.0 | Initial specification |
 | Jan 2026 | v2.0 | Major update: AEO optimization with question-based H2s; Grade Explainer section with HTML table; Hero redesign (bento stats grid); Shortened H1 (removed "& Repairs"); Live Market Pulse for freshness signals; Deal Alert CTA for lead capture; Popular Brands section with tiers; Repair Services CTA with trust signals; Merged Location Navigator with country tabs; Reduced Benefits to 4 cards with finance option; Updated FAQs (5 questions including factory seconds and finance); Enhanced categories with tier system and savings badges; Updated meta tags and expanded Schema.org (ItemList, Table, BreadcrumbList); Added AEO strategy section; Added word count guidelines; Expanded internal linking strategy (100-150 links) |
+| Jan 2026 | v2.1 | Removed Announcement Bar section (12 sections total) |
 
 ---
 
