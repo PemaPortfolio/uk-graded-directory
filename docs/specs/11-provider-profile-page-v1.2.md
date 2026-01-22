@@ -382,6 +382,9 @@ PAGE SECTIONS — PROVIDER PROFILE
 ═══════════════════════════════════════════════════════════════
 
 ┌─────────────────────────────────────────────────────────────┐
+│  NAVBAR (Standard with Search Bar - Spec 02)                │
+│  [Logo] [Search Bar] [For Business ▼] [Login]               │
+├─────────────────────────────────────────────────────────────┤
 │  1. BREADCRUMB                                              │
 │     Home > England > Manchester > Midlands Appliance Repairs│
 ├─────────────────────────────────────────────────────────────┤

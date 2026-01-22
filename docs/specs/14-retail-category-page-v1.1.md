@@ -179,6 +179,9 @@ RetailCategoryPage
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
+│ NAVBAR (Standard with Search Bar - Spec 02)                            │
+│ [Logo] [Search Bar] [For Business ▼] [Login]                           │
+├────────────────────────────────────────────────────────────────────────┤
 │ [Breadcrumbs: Home > England > Manchester > Washing Machines]          │
 ├────────────────────────────────────────────────────────────────────────┤
 │                                                                        │

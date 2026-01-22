@@ -490,6 +490,9 @@ PAGE SECTIONS — REPAIR CATEGORY PAGE
 ═══════════════════════════════════════════════════════════════
 
 ┌─────────────────────────────────────────────────────────────┐
+│  NAVBAR (Standard with Search Bar - Spec 02)                │
+│  [Logo] [Search Bar] [For Business ▼] [Login]               │
+├─────────────────────────────────────────────────────────────┤
 │  1. BREADCRUMB                                              │
 │     Home > England > Manchester > Washing Machine Repair    │
 ├─────────────────────────────────────────────────────────────┤
