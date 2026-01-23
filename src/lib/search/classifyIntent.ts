@@ -10,11 +10,12 @@ import { createClient } from '@/lib/supabase/server'
  *
  * Classifies user search queries and returns the appropriate URL to navigate to.
  * Priority order:
- * 1. Exact place match → /{countrySlug}/{placeSlug}/
- * 2. Exact category match → /{categorySlug}/ (national)
- * 3. Exact brand match → /{brandSlug}/ (national)
- * 4. Repair intent + category → /{categorySlug}-repair/ (national)
- * 5. Fallback → /search?q={query}
+ * 1. Exact place match → /{countrySlug}/{placeSlug}/ (cities/towns)
+ * 2. Exact admin area match → /{countrySlug}/{adminAreaSlug}/ (boroughs/counties)
+ * 3. Exact category match → /{categorySlug}/ (national)
+ * 4. Exact brand match → /{brandSlug}/ (national)
+ * 5. Repair intent + category → /{categorySlug}-repair/ (national)
+ * 6. Fallback → /search?q={query}
  */
 
 export interface ClassificationResult {
@@ -122,11 +123,53 @@ export async function classifySearchIntent(
       }
     }
 
-    // 2. Check for repair intent in query
+    // 2. Check for admin area match (boroughs, counties, regions)
+    // Only if no place was found - admin areas are lower priority than specific places
+    const { data: adminAreaBySlug } = await supabase
+      .from('admin_areas')
+      .select(`
+        id, name, slug,
+        countries!inner (slug)
+      `)
+      .eq('is_active', true)
+      .eq('slug', querySlug)
+      .limit(1)
+
+    let adminAreaMatch = adminAreaBySlug?.[0]
+
+    // If no slug match, try name match
+    if (!adminAreaMatch) {
+      const { data: adminAreaByName } = await supabase
+        .from('admin_areas')
+        .select(`
+          id, name, slug,
+          countries!inner (slug)
+        `)
+        .eq('is_active', true)
+        .ilike('name', `%${queryNormalized}%`)
+        .limit(1)
+
+      adminAreaMatch = adminAreaByName?.[0]
+    }
+
+    if (adminAreaMatch) {
+      const country = Array.isArray(adminAreaMatch.countries)
+        ? adminAreaMatch.countries[0]
+        : adminAreaMatch.countries
+      const countrySlug = country?.slug || 'england'
+
+      return {
+        type: 'place', // Use 'place' type since it routes to same page structure
+        url: `/${countrySlug}/${adminAreaMatch.slug}/`,
+        matchedName: adminAreaMatch.name
+      }
+    }
+
+    // 3. Check for repair intent in query
     const hasRepairIntent = filter === 'repair' ||
       REPAIR_KEYWORDS.some(keyword => queryLower.includes(keyword))
 
-    // 3. Check for category match
+    // 4. Check for category match
     // Try slug match first, then name match
     const { data: categoryBySlug } = await supabase
       .from('appliance_categories')
@@ -179,7 +222,7 @@ export async function classifySearchIntent(
       }
     }
 
-    // 4. Check for brand match
+    // 5. Check for brand match
     const { data: brandBySlug } = await supabase
       .from('brands')
       .select('id, name, slug')
@@ -209,7 +252,7 @@ export async function classifySearchIntent(
       }
     }
 
-    // 5. Fallback to search page
+    // 6. Fallback to search page
     return {
       type: 'search',
       url: `/search?q=${encodeURIComponent(query.trim())}${filter !== 'all' ? `&type=${filter}` : ''}`
