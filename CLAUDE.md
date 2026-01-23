@@ -27,18 +27,65 @@ npm run lint     # Run ESLint
 
 ```
 src/
-├── app/              # Next.js App Router pages
-│   ├── layout.tsx    # Root layout with Geist fonts
-│   ├── page.tsx      # Homepage
-│   └── globals.css   # Tailwind imports
-├── lib/
-│   └── supabase/     # Supabase client utilities
-└── types/            # TypeScript definitions
+├── app/                    # Next.js App Router pages
+│   ├── [country]/          # Dynamic country/city/category routes
+│   ├── api/                # API routes (search classification)
+│   ├── auth/               # Auth callback handler
+│   ├── business/           # Business add/claim flows
+│   ├── login/              # Login page
+│   ├── provider/           # Provider profile pages
+│   ├── search/             # Search results page
+│   ├── store/              # Store profile pages
+│   ├── layout.tsx          # Root layout with Geist fonts
+│   ├── page.tsx            # Homepage
+│   └── globals.css         # Tailwind imports
+├── components/             # React components by feature
+│   ├── admin-area/         # Admin area page components
+│   ├── auth/               # Auth modal, forms, user menu
+│   ├── brand-repair/       # Brand repair page components
+│   ├── business/           # Business add/claim flow components
+│   ├── city/               # City page components
+│   ├── country/            # Country page components
+│   ├── filters/            # Filter bar, modals, sort dropdowns
+│   ├── footer/             # Site footer
+│   ├── homepage/           # Homepage sections
+│   ├── layout/             # Layout wrapper components
+│   ├── maps/               # Single/multi location maps
+│   ├── national-repair/    # National repair category components
+│   ├── national-retail/    # National retail category components
+│   ├── nav/                # Navigation, header, business menu
+│   ├── provider/           # Provider profile components
+│   ├── repair-category/    # Repair category page components
+│   ├── retail-category/    # Retail category page components
+│   ├── reviews/            # Review display, ratings, sections
+│   ├── search/             # Search bar, results, suggestions
+│   └── store/              # Store profile components
+├── config/                 # Configuration files
+│   ├── filters/            # Store/provider filter configs
+│   └── social.ts           # Social media links
+├── hooks/                  # Custom React hooks
+│   └── useAuthModal.ts     # Auth modal state hook
+├── lib/                    # Utility libraries
+│   ├── auth/               # Auth context provider
+│   ├── data/               # Data fetching utilities
+│   ├── filters/            # Filter state management
+│   ├── footer/             # Footer data
+│   ├── schema/             # Schema.org builders
+│   ├── search/             # Search classification logic
+│   ├── supabase/           # Supabase client utilities
+│   └── utils/              # General utilities
+├── types/                  # TypeScript definitions
+│   ├── auth.ts             # Auth types
+│   ├── business.ts         # Business form types
+│   ├── filters.ts          # Filter/sort types
+│   ├── footer.ts           # Footer types
+│   └── reviews.ts          # Review types
+└── middleware.ts           # Auth middleware for protected routes
 
 docs/
-├── specs/            # 21 locked UI specifications (see 00-index.md)
-├── backend/          # Database migrations
-└── guides/           # Implementation guides
+├── specs/                  # 21 locked UI specifications (see 00-index.md)
+├── backend/                # Database migrations
+└── guides/                 # Implementation guides
 ```
 
 ## Database Schema
@@ -69,13 +116,13 @@ Use `haversine_distance_miles()` and `calculate_bounding_box()` functions for pr
 
 ## Design Specifications
 
-All UI specs are in `docs/specs/`. Reference `00-index.md` for the master list. 21 of 23 specs are locked and should be followed exactly:
+All UI specs are in `docs/specs/`. Reference `00-index.md` for the master list. All 21 specs are locked and should be followed exactly:
 
-- Header components (logo, search, auth, business menu)
-- Profile pages (store, provider)
-- Location pages (homepage, country, city)
-- Category pages (retail, repair, national)
-- Reusable components (cards, filters, breadcrumbs, maps, reviews)
+- **Header:** Logo (01), Search Bar (02), Auth/Login (04), Business Listing/Claim (03)
+- **Profile Pages:** Store Profile (06), Provider Profile (11)
+- **Location Pages:** Homepage (12), Country (13), City (07)
+- **Category Pages:** Retail Category (14), Repair Category (10), National Retail (17), National Repair (16), Brand Repair (15)
+- **Reusable Components:** Store Card (08), Provider Card (09), Filter/Sort UI (18), Breadcrumbs (19), Map View (20), Review Display (21), Footer (05)
 
 ## Design System
 
