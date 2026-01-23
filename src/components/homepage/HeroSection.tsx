@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Search, MapPin } from 'lucide-react'
+import { Search, MapPin, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 
 interface HeroStats {
@@ -26,12 +26,33 @@ interface HeroSectionProps {
  */
 export default function HeroSection({ stats }: HeroSectionProps) {
   const [query, setQuery] = useState('')
+  const [isSearching, setIsSearching] = useState(false)
   const router = useRouter()
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (query.trim()) {
-      router.push(`/search?q=${encodeURIComponent(query.trim())}`)
+    const trimmedQuery = query.trim()
+    if (!trimmedQuery) return
+
+    setIsSearching(true)
+    try {
+      // Call the classification API for intelligent routing
+      const response = await fetch('/api/search/classify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: trimmedQuery, filter: 'all' }),
+      })
+
+      if (!response.ok) throw new Error('Classification failed')
+
+      const result = await response.json()
+      router.push(result.url)
+    } catch (error) {
+      // Fallback to search page on error
+      console.error('Search classification error:', error)
+      router.push(`/search?q=${encodeURIComponent(trimmedQuery)}`)
+    } finally {
+      setIsSearching(false)
     }
   }
 
@@ -80,14 +101,23 @@ export default function HeroSection({ stats }: HeroSectionProps) {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Enter your city or postcode (e.g., Manchester, SW1A)"
-                  className="w-full h-14 pl-12 pr-4 rounded-lg border border-[#ebe5e5] bg-white text-base focus:outline-none focus:ring-2 focus:ring-[#e85d4c]/50 focus:border-[#e85d4c]"
+                  disabled={isSearching}
+                  className="w-full h-14 pl-12 pr-4 rounded-lg border border-[#ebe5e5] bg-white text-base focus:outline-none focus:ring-2 focus:ring-[#e85d4c]/50 focus:border-[#e85d4c] disabled:opacity-50"
                 />
               </div>
               <button
                 type="submit"
-                className="h-14 px-6 bg-[#e85d4c] hover:bg-[#d94f3f] text-white font-medium rounded-lg transition-colors whitespace-nowrap"
+                disabled={isSearching || !query.trim()}
+                className="h-14 px-6 bg-[#e85d4c] hover:bg-[#d94f3f] text-white font-medium rounded-lg transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Search Nearby →
+                {isSearching ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Searching...
+                  </>
+                ) : (
+                  'Search Nearby →'
+                )}
               </button>
             </form>
 

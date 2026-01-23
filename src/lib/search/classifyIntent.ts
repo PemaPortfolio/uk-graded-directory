@@ -47,8 +47,8 @@ export async function classifySearchIntent(
       return { type: 'search', url: '/search' }
     }
 
-    // 1. Check for exact place match (highest priority for location searches)
-    // First try exact slug match, then case-insensitive name match
+    // 1. Check for place match (highest priority for location searches)
+    // Try: exact slug → exact name → partial name (starts with) → partial name (contains)
     const { data: placeBySlug } = await supabase
       .from('places')
       .select(`
@@ -61,7 +61,7 @@ export async function classifySearchIntent(
 
     let placeMatch = placeBySlug?.[0]
 
-    // If no slug match, try case-insensitive name match
+    // If no slug match, try exact case-insensitive name match
     if (!placeMatch) {
       const { data: placeByName } = await supabase
         .from('places')
@@ -75,6 +75,38 @@ export async function classifySearchIntent(
         .limit(1)
 
       placeMatch = placeByName?.[0]
+    }
+
+    // If no exact match, try partial match (name starts with query)
+    if (!placeMatch) {
+      const { data: placeByPartial } = await supabase
+        .from('places')
+        .select(`
+          id, name, slug,
+          countries!inner (slug)
+        `)
+        .eq('is_active', true)
+        .ilike('name', `${queryNormalized}%`)
+        .order('population', { ascending: false, nullsFirst: false })
+        .limit(1)
+
+      placeMatch = placeByPartial?.[0]
+    }
+
+    // If still no match, try contains match (for queries like "london" → "City of London")
+    if (!placeMatch) {
+      const { data: placeByContains } = await supabase
+        .from('places')
+        .select(`
+          id, name, slug,
+          countries!inner (slug)
+        `)
+        .eq('is_active', true)
+        .ilike('name', `%${queryNormalized}%`)
+        .order('population', { ascending: false, nullsFirst: false })
+        .limit(1)
+
+      placeMatch = placeByContains?.[0]
     }
 
     if (placeMatch) {
