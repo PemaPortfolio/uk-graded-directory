@@ -7,13 +7,11 @@
  */
 
 import { useState, useRef, useEffect } from 'react'
-import Link from 'next/link'
 import { ArrowLeft, Loader2 } from 'lucide-react'
 
 interface ClaimCodeEntryProps {
   maskedContact: string
   method: 'email' | 'phone'
-  expiresAt: string
   onVerify: (code: string) => Promise<{ success: boolean; error?: string }>
   onResend: () => Promise<void>
   onChangeMethod: () => void
@@ -25,8 +23,6 @@ const RESEND_COOLDOWN = 60 // seconds
 
 export function ClaimCodeEntry({
   maskedContact,
-  method,
-  expiresAt,
   onVerify,
   onResend,
   onChangeMethod,
@@ -137,8 +133,6 @@ export function ClaimCodeEntry({
       setError('Failed to resend code. Please try again.')
     }
   }
-
-  const methodLabel = method === 'email' ? 'email' : 'SMS'
 
   return (
     <div className={`max-w-md mx-auto ${className}`}>

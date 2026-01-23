@@ -6,7 +6,6 @@
  * Business name and address details.
  */
 
-import { useState, useEffect } from 'react'
 import type { StoreStep1Data } from '@/types/business'
 
 interface StoreStep1BasicProps {
@@ -15,9 +14,6 @@ interface StoreStep1BasicProps {
   errors?: Record<string, string>
   className?: string
 }
-
-// UK postcode regex
-const POSTCODE_REGEX = /^[A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2}$/i
 
 export function StoreStep1Basic({
   data,

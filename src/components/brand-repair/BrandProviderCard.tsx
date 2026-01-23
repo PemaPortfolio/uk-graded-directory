@@ -10,13 +10,11 @@ import {
   Award,
   Flame,
 } from 'lucide-react'
-import type { ProviderWithAuthorization, BrandData, CountryData } from '@/lib/data/getBrandRepairData'
+import type { ProviderWithAuthorization, BrandData } from '@/lib/data/getBrandRepairData'
 
 interface Props {
   provider: ProviderWithAuthorization
   brand: BrandData
-  countrySlug: string
-  citySlug: string
 }
 
 /**
@@ -25,8 +23,6 @@ interface Props {
 export default function BrandProviderCard({
   provider,
   brand,
-  countrySlug,
-  citySlug,
 }: Props) {
   const auth = provider.authorization
 

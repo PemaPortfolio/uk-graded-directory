@@ -29,8 +29,6 @@ export function BusinessLookup({ businessType, className = '' }: BusinessLookupP
   const [errors, setErrors] = useState<{ postcode?: string; businessName?: string }>({})
   const [isLoading, setIsLoading] = useState(false)
 
-  const typeLabel = businessType === 'store' ? 'store' : 'service'
-
   const validateForm = (): boolean => {
     const newErrors: { postcode?: string; businessName?: string } = {}
 

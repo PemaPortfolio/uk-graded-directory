@@ -52,6 +52,7 @@ export function StoreStep5Services({
       })
     }
     // For 'paid', installation_cost is set via the input field
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [installationType])
 
   const handleChange = <K extends keyof StoreStep5Data>(field: K, value: StoreStep5Data[K]) => {

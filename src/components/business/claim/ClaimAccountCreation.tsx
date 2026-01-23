@@ -64,7 +64,7 @@ export function ClaimAccountCreation({
     setIsLoading(true)
     try {
       await onComplete({ name: name.trim(), password })
-    } catch (error) {
+    } catch {
       setErrors({ submit: 'An error occurred. Please try again.' })
     } finally {
       setIsLoading(false)

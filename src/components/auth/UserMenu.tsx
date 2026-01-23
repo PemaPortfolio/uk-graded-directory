@@ -8,6 +8,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronDown, LayoutDashboard, Settings, LogOut } from 'lucide-react'
 import { useAuth } from '@/lib/auth/auth-context'
 
@@ -69,9 +70,11 @@ export function UserMenu() {
       >
         {/* Avatar */}
         {avatarUrl ? (
-          <img
+          <Image
             src={avatarUrl}
             alt=""
+            width={36}
+            height={36}
             className="w-9 h-9 rounded-full border-2 border-gray-200 dark:border-gray-700"
           />
         ) : (
@@ -91,7 +94,7 @@ export function UserMenu() {
           <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
             <div className="flex items-center gap-3">
               {avatarUrl ? (
-                <img src={avatarUrl} alt="" className="w-10 h-10 rounded-full" />
+                <Image src={avatarUrl} alt="" width={40} height={40} className="w-10 h-10 rounded-full" />
               ) : (
                 <div className="w-10 h-10 rounded-full bg-[#e85d4c] flex items-center justify-center text-white font-medium">
                   {initials}

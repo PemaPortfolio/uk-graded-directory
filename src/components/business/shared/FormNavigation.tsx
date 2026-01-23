@@ -101,9 +101,7 @@ export function FormNavigation({
 /**
  * StickyFormNavigation - Mobile-friendly sticky navigation
  */
-interface StickyFormNavigationProps extends FormNavigationProps {}
-
-export function StickyFormNavigation(props: StickyFormNavigationProps) {
+export function StickyFormNavigation(props: FormNavigationProps) {
   return (
     <div className="
       fixed bottom-0 left-0 right-0

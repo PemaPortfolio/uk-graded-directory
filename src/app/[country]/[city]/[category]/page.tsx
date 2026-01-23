@@ -2,11 +2,7 @@ import { notFound, redirect } from 'next/navigation'
 import { Metadata } from 'next'
 import { getRetailCategoryDataSafe } from '@/lib/data/getRetailCategoryData'
 import { getRepairCategoryDataSafe } from '@/lib/data/getRepairCategoryData'
-import {
-  getBrandRepairPageDataSafe,
-  isBrandRepairSlug,
-  parseBrandFromRepairSlug,
-} from '@/lib/data/getBrandRepairData'
+import { getBrandRepairPageDataSafe } from '@/lib/data/getBrandRepairData'
 import { Footer } from '@/components/footer'
 import { getFooterDataSafe } from '@/lib/footer/getFooterData'
 import {
@@ -486,7 +482,6 @@ async function BrandRepairPage({
         providers={providers}
         brand={brand}
         place={place}
-        country={country}
       />
 
       {/* Low provider count message */}

@@ -1,11 +1,10 @@
 import BrandProviderCard from './BrandProviderCard'
-import type { ProviderWithAuthorization, BrandData, PlaceData, CountryData } from '@/lib/data/getBrandRepairData'
+import type { ProviderWithAuthorization, BrandData, PlaceData } from '@/lib/data/getBrandRepairData'
 
 interface Props {
   providers: ProviderWithAuthorization[]
   brand: BrandData
   place: PlaceData
-  country: CountryData
 }
 
 /**
@@ -15,7 +14,6 @@ export default function BrandProviderListings({
   providers,
   brand,
   place,
-  country,
 }: Props) {
   if (providers.length === 0) return null
 
@@ -36,8 +34,6 @@ export default function BrandProviderListings({
               key={provider.id}
               provider={provider}
               brand={brand}
-              countrySlug={country.slug}
-              citySlug={place.slug}
             />
           ))}
         </div>

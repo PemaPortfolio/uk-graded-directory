@@ -29,7 +29,6 @@ import type {
   CategoryGroup,
   Brand,
   OperatingHours,
-  BUSINESS_FORM_STORAGE_KEY,
 } from '@/types/business'
 
 const STORAGE_KEY = 'uk-graded-store-form'

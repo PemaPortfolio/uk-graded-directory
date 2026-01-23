@@ -6,7 +6,7 @@
  * UI for editing weekly opening hours.
  */
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import type { OperatingHours, DayHours } from '@/types/business'
 
 interface OpeningHoursEditorProps {

@@ -12,14 +12,12 @@ import { CheckCircle } from 'lucide-react'
 interface ClaimSuccessProps {
   businessName: string
   businessId: string
-  businessType: 'store' | 'provider'
   className?: string
 }
 
 export function ClaimSuccess({
   businessName,
   businessId,
-  businessType,
   className = '',
 }: ClaimSuccessProps) {
   return (
