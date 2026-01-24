@@ -40,17 +40,27 @@ export const getFooterData = cache(async (): Promise<FooterData> => {
     console.error('Error fetching admin areas:', adminAreasError)
   }
 
-  // Fetch popular cities (top 20 by population/store count)
-  const { data: citiesData, error: citiesError } = await supabase
-    .from('places')
-    .select('id, name, slug, population, countries(slug)')
-    .eq('is_active', true)
-    .order('population', { ascending: false })
-    .limit(20)
+  // Fetch top cities per country to ensure all 4 UK countries are represented
+  // (population data is NULL for all places, so we fetch per-country alphabetically)
+  const countrySlugs = ['england', 'scotland', 'wales', 'northern-ireland']
+  const citiesPromises = countrySlugs.map(countrySlug =>
+    supabase
+      .from('places')
+      .select('id, name, slug, population, countries!inner(slug)')
+      .eq('is_active', true)
+      .eq('countries.slug', countrySlug)
+      .order('name')
+      .limit(8)
+  )
+  const citiesResults = await Promise.all(citiesPromises)
+  const citiesData = citiesResults.flatMap(r => r.data || [])
 
-  if (citiesError) {
-    console.error('Error fetching cities:', citiesError)
-  }
+  // Log any errors
+  citiesResults.forEach((result, idx) => {
+    if (result.error) {
+      console.error(`Error fetching cities for ${countrySlugs[idx]}:`, result.error)
+    }
+  })
 
   // Fetch aggregate stats
   const [storesResult, providersResult, locationsResult] = await Promise.all([
