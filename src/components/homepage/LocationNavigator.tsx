@@ -21,6 +21,7 @@ interface Country {
 interface LocationNavigatorProps {
   countries: Country[]
   cities: City[]
+  totalCities?: number
 }
 
 /**
@@ -29,7 +30,7 @@ interface LocationNavigatorProps {
  * Combined navigation for cities and countries with tab interface.
  * Shows cities filtered by selected country.
  */
-export default function LocationNavigator({ countries, cities }: LocationNavigatorProps) {
+export default function LocationNavigator({ countries, cities, totalCities }: LocationNavigatorProps) {
   // Default to first country or England
   const [selectedCountry, setSelectedCountry] = useState(
     countries[0]?.slug || 'england'
@@ -119,7 +120,7 @@ export default function LocationNavigator({ countries, cities }: LocationNavigat
             href="/locations"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg font-medium text-[#181111] transition-colors"
           >
-            View all 156 cities →
+            View all {totalCities || 563} cities →
           </Link>
         </div>
       </div>

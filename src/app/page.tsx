@@ -48,7 +48,7 @@ export default async function HomePage() {
   // Stats for hero section
   const heroStats = {
     stores: footerData.stats.totalStores || 500,
-    cities: 156,
+    cities: footerData.stats.totalLocations || 563,
     savings: '30-70%',
   }
 
@@ -95,6 +95,7 @@ export default async function HomePage() {
           storeCount: 0, // Would come from database
           countrySlug: city.countrySlug,
         }))}
+        totalCities={footerData.stats.totalLocations}
       />
 
       {/* Section 8: Benefits */}
