@@ -30,7 +30,6 @@ export default function CategoriesSection({ categories }: CategoriesSectionProps
     { name: 'Ovens & Cookers', slug: 'ovens-cookers', icon: '🔥', tier: 'tier_2' },
     { name: 'American Fridges', slug: 'american-fridges', icon: '🇺🇸', tier: 'tier_2' },
     { name: 'Washer Dryers', slug: 'washer-dryers', icon: '🔄', tier: 'tier_3' },
-    { name: 'TVs', slug: 'tvs', icon: '📺', tier: 'tier_3' },
   ]
 
   const displayCategories = categories.length > 0 ? categories : defaultCategories

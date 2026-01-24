@@ -22,7 +22,6 @@ const DEFAULT_ICONS: Record<string, string> = {
   'american-fridge-freezers': '🇺🇸',
   dishwashers: '🍽️',
   'tumble-dryers': '🌀',
-  tvs: '📺',
   ovens: '🔥',
   'range-cookers': '🍳',
   cookers: '🍳',
