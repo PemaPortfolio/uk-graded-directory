@@ -10,8 +10,6 @@ export const REPAIR_SLUG_MAPPINGS: Record<string, string> = {
   'american-fridge-freezer': 'american-fridge-freezers',
   'dishwasher': 'dishwashers',
   'tumble-dryer': 'tumble-dryers',
-  'tv': 'televisions',
-  'television': 'televisions',
   'oven': 'built-in-ovens',
   'range-cooker': 'range-cookers',
   'hob': 'hobs',
