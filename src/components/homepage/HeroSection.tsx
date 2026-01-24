@@ -52,7 +52,6 @@ export default function HeroSection({ stats }: HeroSectionProps) {
                 variant="hero"
                 placeholder="Search appliances, stores, repairs..."
                 showFilters={true}
-                showGeolocation={true}
               />
             </div>
 
