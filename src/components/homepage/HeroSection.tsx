@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Search, MapPin, Loader2 } from 'lucide-react'
 import Link from 'next/link'
+import { SearchBar } from '@/components/search'
 
 interface HeroStats {
   stores: number
@@ -23,54 +21,10 @@ interface HeroSectionProps {
  * - Right: Bento stats grid
  *
  * Background: Warm neutral gradient (#f8f6f6 → #ffffff)
+ *
+ * Uses the enhanced SearchBar with dual inputs (keyword + location)
  */
 export default function HeroSection({ stats }: HeroSectionProps) {
-  const [query, setQuery] = useState('')
-  const [isSearching, setIsSearching] = useState(false)
-  const router = useRouter()
-
-  const handleSearch = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const trimmedQuery = query.trim()
-    if (!trimmedQuery) return
-
-    setIsSearching(true)
-    try {
-      // Call the classification API for intelligent routing
-      const response = await fetch('/api/search/classify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: trimmedQuery, filter: 'all' }),
-      })
-
-      if (!response.ok) throw new Error('Classification failed')
-
-      const result = await response.json()
-      router.push(result.url)
-    } catch (error) {
-      // Fallback to search page on error
-      console.error('Search classification error:', error)
-      router.push(`/search?q=${encodeURIComponent(trimmedQuery)}`)
-    } finally {
-      setIsSearching(false)
-    }
-  }
-
-  const handleGeolocation = () => {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          // Navigate with coordinates
-          router.push(`/nearby?lat=${position.coords.latitude}&lng=${position.coords.longitude}`)
-        },
-        (error) => {
-          console.error('Geolocation error:', error)
-          alert('Unable to get your location. Please enter your city manually.')
-        }
-      )
-    }
-  }
-
   return (
     <section className="bg-gradient-to-b from-[#f8f6f6] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
@@ -79,7 +33,7 @@ export default function HeroSection({ stats }: HeroSectionProps) {
           <div className="lg:col-span-3 space-y-6">
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 bg-[#e85d4c]/10 px-3 py-1.5 rounded-full text-sm text-[#e85d4c] font-medium">
-              ⭐ UK&apos;s #1 Graded Appliance Directory
+              UK&apos;s #1 Graded Appliance Directory
             </div>
 
             {/* H1 */}
@@ -92,43 +46,15 @@ export default function HeroSection({ stats }: HeroSectionProps) {
               Save 30-70% on ex-display, B-grade and factory seconds from verified UK retailers.
             </p>
 
-            {/* Search Bar */}
-            <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 max-w-xl">
-              <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Enter your city or postcode (e.g., Manchester, SW1A)"
-                  disabled={isSearching}
-                  className="w-full h-14 pl-12 pr-4 rounded-lg border border-[#ebe5e5] bg-white text-base focus:outline-none focus:ring-2 focus:ring-[#e85d4c]/50 focus:border-[#e85d4c] disabled:opacity-50"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSearching || !query.trim()}
-                className="h-14 px-6 bg-[#e85d4c] hover:bg-[#d94f3f] text-white font-medium rounded-lg transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              >
-                {isSearching ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Searching...
-                  </>
-                ) : (
-                  'Search Nearby →'
-                )}
-              </button>
-            </form>
-
-            {/* Geolocation Button */}
-            <button
-              onClick={handleGeolocation}
-              className="inline-flex items-center gap-2 text-[#6b7280] hover:text-[#e85d4c] text-sm transition-colors"
-            >
-              <MapPin className="w-4 h-4" />
-              Use my location
-            </button>
+            {/* Search Bar - Enhanced with dual inputs */}
+            <div className="max-w-2xl">
+              <SearchBar
+                variant="hero"
+                placeholder="Search appliances, stores, repairs..."
+                showFilters={true}
+                showGeolocation={true}
+              />
+            </div>
 
             {/* Quick Category Links */}
             <div className="flex flex-wrap items-center gap-2">
@@ -136,15 +62,15 @@ export default function HeroSection({ stats }: HeroSectionProps) {
               <Link href="/washing-machines" className="text-sm text-[#181111] hover:text-[#e85d4c] transition-colors">
                 Washing Machines
               </Link>
-              <span className="text-gray-300">•</span>
+              <span className="text-gray-300">|</span>
               <Link href="/fridge-freezers" className="text-sm text-[#181111] hover:text-[#e85d4c] transition-colors">
                 Fridges
               </Link>
-              <span className="text-gray-300">•</span>
+              <span className="text-gray-300">|</span>
               <Link href="/ovens-cookers" className="text-sm text-[#181111] hover:text-[#e85d4c] transition-colors">
                 Ovens
               </Link>
-              <span className="text-gray-300">•</span>
+              <span className="text-gray-300">|</span>
               <Link href="/dishwashers" className="text-sm text-[#181111] hover:text-[#e85d4c] transition-colors">
                 Dishwashers
               </Link>

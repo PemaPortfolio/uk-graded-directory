@@ -1,8 +1,12 @@
 'use client'
 
-import { useState } from 'react'
-import { Search, Loader2, X } from 'lucide-react'
+import { useState, useCallback, useRef, useEffect } from 'react'
+import { Loader2, Search } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import KeywordInput from './KeywordInput'
+import LocationInput from './LocationInput'
+import GeolocationButton from './GeolocationButton'
+import type { SelectedPlace } from '@/types/search'
 
 type FilterType = 'all' | 'buy' | 'repair'
 
@@ -12,6 +16,7 @@ interface SearchBarProps {
   className?: string
   showFilters?: boolean
   defaultFilter?: FilterType
+  showGeolocation?: boolean
 }
 
 interface ClassificationResult {
@@ -21,13 +26,16 @@ interface ClassificationResult {
 }
 
 /**
- * Search Bar Component (Spec 02)
+ * Search Bar Component (Spec 02 - Phase 2)
  *
  * Features:
+ * - Dual input: keyword (left) + location (right)
  * - Intelligent routing: detects places, categories, brands
+ * - Autocomplete dropdowns for both inputs
  * - Filter pills (All/Buy/Repair)
- * - Two variants: default (navbar) and hero (homepage)
- * - Mobile optimized with proper input attributes
+ * - Keyboard navigation (Arrow keys, Enter, Escape, Tab)
+ * - Desktop: side-by-side layout
+ * - Mobile: stacked layout
  */
 export default function SearchBar({
   variant = 'default',
@@ -35,30 +43,54 @@ export default function SearchBar({
   className = '',
   showFilters = true,
   defaultFilter = 'all',
+  showGeolocation = true,
 }: SearchBarProps) {
   const [query, setQuery] = useState('')
+  const [location, setLocation] = useState<SelectedPlace | null>(null)
   const [filter, setFilter] = useState<FilterType>(defaultFilter)
   const [isLoading, setIsLoading] = useState(false)
+  const [activeInput, setActiveInput] = useState<'keyword' | 'location' | null>(null)
+  const [highlightedIndex, setHighlightedIndex] = useState(-1)
   const router = useRouter()
+  const formRef = useRef<HTMLFormElement>(null)
+
+  // Reset highlighted index when active input changes
+  useEffect(() => {
+    setHighlightedIndex(-1)
+  }, [activeInput, query, location])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const trimmedQuery = query.trim()
 
-    if (!trimmedQuery) {
+    // If location is selected and no keyword, go directly to location page
+    if (location && !trimmedQuery) {
+      router.push(`/${location.countrySlug}/${location.slug}/`)
+      return
+    }
+
+    // If no query and no location, do nothing
+    if (!trimmedQuery && !location) {
       return
     }
 
     setIsLoading(true)
 
     try {
-      // Call the classification API
+      // Call the classification API with location context
       const response = await fetch('/api/search/classify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query: trimmedQuery, filter }),
+        body: JSON.stringify({
+          query: trimmedQuery,
+          filter,
+          location: location ? {
+            slug: location.slug,
+            countrySlug: location.countrySlug,
+          } : null,
+        }),
       })
 
       if (!response.ok) {
@@ -66,107 +98,143 @@ export default function SearchBar({
       }
 
       const result: ClassificationResult = await response.json()
-      router.push(result.url)
+
+      // If we have a location and the result is a category, route to location + category
+      if (location && result.type === 'category') {
+        // Extract category slug from the URL (e.g., "/washing-machines/" -> "washing-machines")
+        const categorySlug = result.url.replace(/\//g, '')
+        router.push(`/${location.countrySlug}/${location.slug}/${categorySlug}/`)
+      } else if (location && result.type === 'repair') {
+        // For repair categories with location
+        const categorySlug = result.url.replace(/\//g, '')
+        router.push(`/${location.countrySlug}/${location.slug}/${categorySlug}/`)
+      } else {
+        router.push(result.url)
+      }
     } catch (error) {
       // Fallback to search page on error
       console.error('Search classification error:', error)
-      router.push(`/search?q=${encodeURIComponent(trimmedQuery)}`)
+      const searchParams = new URLSearchParams()
+      if (trimmedQuery) searchParams.set('q', trimmedQuery)
+      if (location) searchParams.set('location', location.slug)
+      router.push(`/search?${searchParams.toString()}`)
     } finally {
       setIsLoading(false)
     }
   }
 
-  const handleClear = () => {
-    setQuery('')
-  }
+  const handleKeywordChange = useCallback((value: string) => {
+    setQuery(value)
+  }, [])
+
+  const handleLocationChange = useCallback((place: SelectedPlace | null) => {
+    setLocation(place)
+  }, [])
+
+  const handleCategorySelect = useCallback((slug: string) => {
+    // If location is selected, go to location + category
+    if (location) {
+      router.push(`/${location.countrySlug}/${location.slug}/${slug}/`)
+    } else {
+      router.push(`/${slug}/`)
+    }
+  }, [location, router])
+
+  const handleBrandSelect = useCallback((slug: string) => {
+    router.push(`/${slug}-repair/`)
+  }, [router])
+
+  const handleGeolocationFound = useCallback((place: SelectedPlace) => {
+    setLocation(place)
+  }, [])
+
+  // Keyboard navigation
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setHighlightedIndex(prev => prev + 1)
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setHighlightedIndex(prev => Math.max(-1, prev - 1))
+    } else if (e.key === 'Tab') {
+      // Let default tab behavior work
+      setHighlightedIndex(-1)
+    }
+  }, [])
 
   const isHero = variant === 'hero'
 
   return (
     <div className={className}>
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
         className="relative"
         role="search"
       >
-        {/* Search input row */}
-        <div className={`flex items-center ${isHero ? 'flex-col sm:flex-row gap-2 sm:gap-0' : ''}`}>
-          <div className="relative flex-1 w-full">
-            <Search
-              className={`absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none ${
-                isHero ? 'w-5 h-5' : 'w-4 h-4'
-              }`}
-              aria-hidden="true"
-            />
-            <input
-              type="text"
+        {/* Dual input layout */}
+        <div className={`
+          flex gap-3
+          ${isHero ? 'flex-col sm:flex-row' : 'flex-col sm:flex-row'}
+        `}>
+          {/* Keyword input */}
+          <div className={`relative ${isHero ? 'flex-1' : 'flex-1'}`}>
+            <KeywordInput
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={handleKeywordChange}
+              onSelectCategory={handleCategorySelect}
+              onSelectBrand={handleBrandSelect}
+              onFocus={() => setActiveInput('keyword')}
+              onBlur={() => setActiveInput(null)}
               placeholder={placeholder}
               disabled={isLoading}
-              className={`
-                w-full border border-[#ebe5e5] bg-white
-                text-[#181111] placeholder:text-gray-400
-                focus:outline-none focus:ring-2 focus:ring-[#e85d4c]/50 focus:border-[#e85d4c]
-                disabled:opacity-50 disabled:cursor-not-allowed
-                transition-colors
-                ${isHero
-                  ? 'h-14 pl-12 pr-10 text-base rounded-lg sm:rounded-l-lg sm:rounded-r-none'
-                  : 'h-10 pl-10 pr-8 text-sm rounded-lg'
-                }
-              `}
-              aria-label="Search for appliances, stores, or repair services"
-              inputMode="search"
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="off"
-              spellCheck={false}
-              enterKeyHint="search"
+              highlightedIndex={activeInput === 'keyword' ? highlightedIndex : -1}
+              onKeyDown={handleKeyDown}
             />
+          </div>
 
-            {/* Clear button */}
-            {query && !isLoading && (
-              <button
-                type="button"
-                onClick={handleClear}
-                className={`absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors ${
-                  isHero ? 'sm:right-3' : ''
-                }`}
-                aria-label="Clear search"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            )}
-
-            {/* Loading spinner in input */}
-            {isLoading && (
-              <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                <Loader2 className="w-4 h-4 text-[#e85d4c] animate-spin" />
-              </div>
-            )}
+          {/* Location input */}
+          <div className={`relative ${isHero ? 'flex-1 sm:max-w-[280px]' : 'flex-1 sm:max-w-[200px]'}`}>
+            <LocationInput
+              value={location}
+              onChange={handleLocationChange}
+              onFocus={() => setActiveInput('location')}
+              onBlur={() => setActiveInput(null)}
+              placeholder="Enter city or postcode"
+              disabled={isLoading}
+              highlightedIndex={activeInput === 'location' ? highlightedIndex : -1}
+              onKeyDown={handleKeyDown}
+            />
           </div>
 
           {/* Search button (hero variant only) */}
           {isHero && (
             <button
               type="submit"
-              disabled={isLoading || !query.trim()}
-              className="w-full sm:w-auto h-14 px-6 bg-[#e85d4c] hover:bg-[#d94f3f] disabled:bg-[#e85d4c]/50 text-white font-semibold rounded-lg sm:rounded-l-none sm:rounded-r-lg transition-colors whitespace-nowrap disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              disabled={isLoading || (!query.trim() && !location)}
+              className="h-14 px-6 bg-[#e85d4c] hover:bg-[#d94f3f] disabled:bg-[#e85d4c]/50 text-white font-semibold rounded-lg transition-colors whitespace-nowrap disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <>
                   <Loader2 className="w-5 h-5 animate-spin" />
-                  <span>Searching...</span>
+                  <span className="hidden sm:inline">Searching...</span>
                 </>
               ) : (
                 <>
                   <Search className="w-5 h-5" />
-                  <span>Search</span>
+                  <span className="hidden sm:inline">Search</span>
                 </>
               )}
             </button>
           )}
         </div>
+
+        {/* Geolocation button */}
+        {showGeolocation && isHero && (
+          <div className="mt-3">
+            <GeolocationButton onLocationFound={handleGeolocationFound} />
+          </div>
+        )}
 
         {/* Filter pills */}
         {showFilters && isHero && (
