@@ -27,8 +27,8 @@ export default function CategoriesSection({ categories }: CategoriesSectionProps
     { name: 'Fridge Freezers', slug: 'fridge-freezers', icon: '🧊', tier: 'tier_1', avgSavings: 40 },
     { name: 'Dishwashers', slug: 'dishwashers', icon: '🍽️', tier: 'tier_1', avgSavings: 38 },
     { name: 'Tumble Dryers', slug: 'tumble-dryers', icon: '🌀', tier: 'tier_2' },
-    { name: 'Ovens & Cookers', slug: 'ovens-cookers', icon: '🔥', tier: 'tier_2' },
-    { name: 'American Fridges', slug: 'american-fridges', icon: '🇺🇸', tier: 'tier_2' },
+    { name: 'Ovens & Cookers', slug: 'cookers', icon: '🔥', tier: 'tier_2' },
+    { name: 'American Fridges', slug: 'american-fridge-freezers', icon: '🇺🇸', tier: 'tier_2' },
     { name: 'Washer Dryers', slug: 'washer-dryers', icon: '🔄', tier: 'tier_3' },
   ]
 
