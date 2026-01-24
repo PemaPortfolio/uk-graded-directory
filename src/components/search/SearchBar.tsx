@@ -5,7 +5,6 @@ import { Loader2, Search } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import KeywordInput from './KeywordInput'
 import LocationInput from './LocationInput'
-import GeolocationButton from './GeolocationButton'
 import type { SelectedPlace } from '@/types/search'
 
 type FilterType = 'all' | 'buy' | 'repair'
@@ -16,7 +15,6 @@ interface SearchBarProps {
   className?: string
   showFilters?: boolean
   defaultFilter?: FilterType
-  showGeolocation?: boolean
 }
 
 interface ClassificationResult {
@@ -43,7 +41,6 @@ export default function SearchBar({
   className = '',
   showFilters = true,
   defaultFilter = 'all',
-  showGeolocation = true,
 }: SearchBarProps) {
   const [query, setQuery] = useState('')
   const [location, setLocation] = useState<SelectedPlace | null>(null)
@@ -144,10 +141,6 @@ export default function SearchBar({
     router.push(`/${slug}-repair/`)
   }, [router])
 
-  const handleGeolocationFound = useCallback((place: SelectedPlace) => {
-    setLocation(place)
-  }, [])
-
   // Keyboard navigation
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
@@ -228,13 +221,6 @@ export default function SearchBar({
             </button>
           )}
         </div>
-
-        {/* Geolocation button */}
-        {showGeolocation && isHero && (
-          <div className="mt-3">
-            <GeolocationButton onLocationFound={handleGeolocationFound} />
-          </div>
-        )}
 
         {/* Filter pills */}
         {showFilters && isHero && (

@@ -67,7 +67,8 @@ export default function KeywordInput({
         })
         if (response.ok) {
           const data = await response.json()
-          setPopularCategories(data.categories || [])
+          // Limit to 5 categories to avoid needing scroll
+          setPopularCategories((data.categories || []).slice(0, 5))
         }
       } catch (error) {
         console.error('Error fetching popular categories:', error)
@@ -90,9 +91,10 @@ export default function KeywordInput({
       )
       if (response.ok) {
         const data = await response.json()
+        // Limit results to avoid needing scroll
         setSuggestions({
-          categories: data.categories || [],
-          brands: data.brands || [],
+          categories: (data.categories || []).slice(0, 4),
+          brands: (data.brands || []).slice(0, 3),
         })
       }
     } catch (error) {

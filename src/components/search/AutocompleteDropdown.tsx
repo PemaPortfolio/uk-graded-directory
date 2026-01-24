@@ -69,8 +69,8 @@ export default function AutocompleteDropdown({
       ref={dropdownRef}
       className={`
         absolute z-50 top-full left-0 right-0 mt-1
-        bg-white border border-[#ebe5e5] rounded-lg shadow-lg
-        max-h-[400px] overflow-y-auto
+        bg-white border border-gray-200 rounded-lg
+        shadow-[0_4px_12px_rgba(0,0,0,0.1)]
         ${className}
       `}
       role="listbox"
