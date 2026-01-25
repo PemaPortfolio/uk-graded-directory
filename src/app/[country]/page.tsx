@@ -492,9 +492,9 @@ async function NationalRepairPageContent({ repairSlug }: { repairSlug: string })
     notFound()
   }
 
-  // Handle zero providers — redirect to repair services page
+  // Handle zero providers — redirect to locations page
   if (data.totalProviders === 0) {
-    redirect('/repair-services/')
+    redirect('/locations')
   }
 
   const {

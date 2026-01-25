@@ -2,26 +2,20 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronDown, ChevronRight, Wrench, Shield, MapPin } from 'lucide-react'
+import { ChevronDown, ChevronRight, Wrench, MapPin } from 'lucide-react'
 
 interface RepairItem {
   label: string
   slug: string
 }
 
-// Note: National repair pages require providers in the database
-// Currently linking to search with type=repair filter as fallback
+// Repair service pages (redirect to /locations if no providers yet)
 const repairServices: RepairItem[] = [
-  { label: 'Washing Machine Repair', slug: 'search?type=repair&q=washing+machine' },
-  { label: 'Fridge Freezer Repair', slug: 'search?type=repair&q=fridge+freezer' },
-  { label: 'Oven Repair', slug: 'search?type=repair&q=oven' },
-  { label: 'Dishwasher Repair', slug: 'search?type=repair&q=dishwasher' },
-  { label: 'Tumble Dryer Repair', slug: 'search?type=repair&q=tumble+dryer' },
-]
-
-const certifications: RepairItem[] = [
-  { label: 'Gas Safe Engineers', slug: 'search?type=repair&q=gas+safe' },
-  { label: 'F-Gas Certified', slug: 'search?type=repair&q=f-gas' },
+  { label: 'Washing Machine Repair', slug: 'washing-machine-repair' },
+  { label: 'Fridge Freezer Repair', slug: 'fridge-freezer-repair' },
+  { label: 'Cooker Repair', slug: 'cooker-repair' },
+  { label: 'Dishwasher Repair', slug: 'dishwasher-repair' },
+  { label: 'Tumble Dryer Repair', slug: 'tumble-dryer-repair' },
 ]
 
 /**
@@ -90,32 +84,6 @@ export default function RepairsMenu() {
                   onClick={() => setIsOpen(false)}
                 >
                   {service.label}
-                  <ChevronRight className="w-4 h-4 text-gray-400" />
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="border-t border-gray-100 dark:border-gray-700" />
-
-          {/* Certifications */}
-          <div className="p-4">
-            <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
-              Certified Engineers
-            </div>
-            <div className="space-y-1">
-              {certifications.map((cert) => (
-                <Link
-                  key={cert.slug}
-                  href={`/${cert.slug}`}
-                  className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <span className="flex items-center gap-2">
-                    <Shield className="w-4 h-4 text-green-600" />
-                    {cert.label}
-                  </span>
                   <ChevronRight className="w-4 h-4 text-gray-400" />
                 </Link>
               ))}

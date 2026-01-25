@@ -35,11 +35,11 @@ const sections: AccordionSection[] = [
     label: 'Repairs',
     icon: <Wrench className="w-5 h-5" />,
     items: [
-      { label: 'Washing Machine Repair', href: '/search?type=repair&q=washing+machine' },
-      { label: 'Fridge Freezer Repair', href: '/search?type=repair&q=fridge+freezer' },
-      { label: 'Oven Repair', href: '/search?type=repair&q=oven' },
-      { label: 'Dishwasher Repair', href: '/search?type=repair&q=dishwasher' },
-      { label: 'Tumble Dryer Repair', href: '/search?type=repair&q=tumble+dryer' },
+      { label: 'Washing Machine Repair', href: '/washing-machine-repair' },
+      { label: 'Fridge Freezer Repair', href: '/fridge-freezer-repair' },
+      { label: 'Cooker Repair', href: '/cooker-repair' },
+      { label: 'Dishwasher Repair', href: '/dishwasher-repair' },
+      { label: 'Tumble Dryer Repair', href: '/tumble-dryer-repair' },
     ],
     footerLinks: [
       { label: 'Find Local Engineers', href: '/locations' },
