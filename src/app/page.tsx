@@ -22,13 +22,13 @@ import { getFooterDataSafe } from '@/lib/footer/getFooterData'
  * 2. Hero (search + bento stats)
  * 3. Market Pulse (freshness signals)
  * 4. Grade Explainer (AEO-critical)
- * 5. Deal Alert CTA
- * 6. Categories
- * 7. Location Navigator
- * 8. Benefits
- * 9. Popular Brands
- * 10. Repair CTA
- * 11. FAQ
+ * 5. Categories
+ * 6. Location Navigator
+ * 7. Benefits
+ * 8. Popular Brands
+ * 9. Repair CTA
+ * 10. FAQ
+ * 11. Deal Alert CTA
  * 12. Footer
  */
 
@@ -74,13 +74,10 @@ export default async function HomePage() {
       {/* Section 4: Grade Explainer */}
       <GradeExplainer />
 
-      {/* Section 5: Deal Alert CTA */}
-      <DealAlertCTA />
-
-      {/* Section 6: Categories */}
+      {/* Section 5: Categories */}
       <CategoriesSection categories={[]} />
 
-      {/* Section 7: Location Navigator */}
+      {/* Section 6: Location Navigator */}
       <LocationNavigator
         countries={footerData.countries.map((c) => ({
           id: c.id,
@@ -98,17 +95,20 @@ export default async function HomePage() {
         totalCities={footerData.stats.totalLocations}
       />
 
-      {/* Section 8: Benefits */}
+      {/* Section 7: Benefits */}
       <BenefitsSection />
 
-      {/* Section 9: Popular Brands */}
+      {/* Section 8: Popular Brands */}
       <PopularBrands />
 
-      {/* Section 10: Repair CTA */}
+      {/* Section 9: Repair CTA */}
       <RepairServicesCTA />
 
-      {/* Section 11: FAQ */}
+      {/* Section 10: FAQ */}
       <FAQSection />
+
+      {/* Section 11: Deal Alert CTA */}
+      <DealAlertCTA />
 
       {/* Section 12: Footer */}
       <Footer data={footerData} />
