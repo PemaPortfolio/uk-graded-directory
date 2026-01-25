@@ -346,9 +346,9 @@ async function NationalRetailCategoryPageContent({ categorySlug }: { categorySlu
     notFound()
   }
 
-  // Handle zero stores — redirect to appliances page
+  // Handle zero stores — redirect to categories page
   if (data.totalStores === 0) {
-    redirect('/appliances/')
+    redirect('/categories')
   }
 
   const {
