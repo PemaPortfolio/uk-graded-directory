@@ -1,24 +1,34 @@
 # UK Graded Appliances Directory — Design Specifications Index
 
 **Last Updated:** January 2026
-**Progress:** 22/24 specs complete (92%)
+**Progress:** 23/25 specs complete (92%)
 
 ---
 
 ## Approved Specifications
 
-### 🔷 HEADER / NAVIGATION BAR — COMPLETE ✅
+### 🔷 HEADER / NAVIGATION BAR — ENHANCED ✅
 
-The header section has been fully specified. Components listed left to right:
+The header section has been fully specified with enhanced navigation dropdowns:
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                                                                             │
-│   [LOGO]        [         SEARCH BAR         ]    For Business ▼   Log in  │
-│                                                                             │
-│    (01)                   (02)                        (03)          (04)    │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
+HOMEPAGE (nav centered, search hidden):
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                         │
+│  [LOGO]              [Stores ▼] [Repairs ▼] [Guides ▼] [For Business ▼] [Log in]       │
+│                                                                                         │
+│   (01)                 (23)        (23)        (23)          (03)          (04)         │
+│                                     ↑ CENTERED                                          │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+
+OTHER PAGES (nav right-aligned, search visible):
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                         │
+│  [LOGO]  [═══ SEARCH BAR ═══]  [Stores▼] [Repairs▼] [Guides▼] [Business▼] [Log in]     │
+│                                                                                         │
+│   (01)         (02)              (23)       (23)       (23)       (03)       (04)       │
+│                                                        ↑ RIGHT-ALIGNED                  │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 | # | Component | Status | File |
@@ -27,6 +37,7 @@ The header section has been fully specified. Components listed left to right:
 | 02 | Search Bar Architecture | ✅ LOCKED v1.1 | `02-search-bar-architecture.md` |
 | 03 | Business Listing & Claim Flow | ✅ LOCKED v1.1 | `03-business-listing-claim-flow.md` |
 | 04 | Authentication & Login Flow | ✅ LOCKED v1.0 | `04-authentication-login-flow.md` |
+| 23 | Navigation Enhancement | ✅ LOCKED v1.0 | `23-navigation-enhancement.md` |
 
 ---
 
@@ -101,8 +112,8 @@ The header section has been fully specified. Components listed left to right:
 
 | # | Component | Status | Notes |
 |---|-----------|--------|-------|
-| 23 | Business Dashboard | 🔄 Pending | Owner management UI |
-| 24 | Admin Moderation Panel | 🔄 Pending | Review submissions |
+| 24 | Business Dashboard | 🔄 Pending | Owner management UI |
+| 25 | Admin Moderation Panel | 🔄 Pending | Review submissions |
 
 ---
 
@@ -204,4 +215,8 @@ See `docs/guides/design-system.md` for 8-pixel grid spacing system.
 | Jan 2026 | Index | Updated to 91% complete (21/23 specs)
 | Jan 2026 | Brand Page | Initial spec locked (v1.0) — Brands index page (/brands/), individual brand pages (/brands/{slug}/), brand hub with stores + repair, category cross-links, cities by country, tier-based grouping, Schema.org Brand entity, ~330+ internal links per page |
 | Jan 2026 | Index | Updated to 92% complete (22/24 specs)
+| Jan 2026 | Navigation Enhancement | Initial spec created (v1.0 PENDING) — Stores/Repairs/Guides dropdowns, centered nav on homepage, mobile hamburger menu, analytics tracking, guides backend schema |
+| Jan 2026 | Index | Updated header diagram, renumbered Admin specs (24, 25) |
+| Jan 2026 | Navigation Enhancement | Implemented and LOCKED v1.0 — Stores dropdown (5 categories), Repairs dropdown (5 services), Guides dropdown with /guides/ pages, mobile hamburger menu with accordions |
+| Jan 2026 | Index | Updated to 92% complete (23/25 specs)
 
