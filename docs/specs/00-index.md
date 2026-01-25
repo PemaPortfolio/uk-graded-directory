@@ -1,7 +1,7 @@
 # UK Graded Appliances Directory — Design Specifications Index
 
 **Last Updated:** January 2026
-**Progress:** 21/23 specs complete (91%)
+**Progress:** 22/24 specs complete (92%)
 
 ---
 
@@ -89,12 +89,20 @@ The header section has been fully specified. Components listed left to right:
 | 20 | Map View | ✅ LOCKED v1.0 | `20-map-view-system.md` |
 | 21 | Review Display | ✅ LOCKED v1.0 | `21-review-display-system.md` |
 
+### 🔷 BRAND PAGES — COMPLETE ✅
+
+| # | Component | Status | File |
+|---|-----------|--------|------|
+| 22 | Brand Page | ✅ LOCKED v1.0 | `22-brand-page.md` |
+
+---
+
 ### 🔷 ADMIN & DASHBOARD
 
 | # | Component | Status | Notes |
 |---|-----------|--------|-------|
-| 22 | Business Dashboard | 🔄 Pending | Owner management UI |
-| 23 | Admin Moderation Panel | 🔄 Pending | Review submissions |
+| 23 | Business Dashboard | 🔄 Pending | Owner management UI |
+| 24 | Admin Moderation Panel | 🔄 Pending | Review submissions |
 
 ---
 
@@ -194,4 +202,6 @@ See `docs/guides/design-system.md` for 8-pixel grid spacing system.
 | Jan 2026 | Index | Updated to 87% complete (20/23 specs)
 | Jan 2026 | Review Display System | Initial spec locked (v1.0) — Google Reviews integration strategy, rating display component (4 variants), reviews section for profile pages, Schema.org AggregateRating, fallback states, accessibility compliance, future internal reviews migration path |
 | Jan 2026 | Index | Updated to 91% complete (21/23 specs)
+| Jan 2026 | Brand Page | Initial spec locked (v1.0) — Brands index page (/brands/), individual brand pages (/brands/{slug}/), brand hub with stores + repair, category cross-links, cities by country, tier-based grouping, Schema.org Brand entity, ~330+ internal links per page |
+| Jan 2026 | Index | Updated to 92% complete (22/24 specs)
 

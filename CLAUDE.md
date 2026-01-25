@@ -31,7 +31,10 @@ src/
 │   ├── [country]/          # Dynamic country/city/category routes
 │   ├── api/                # API routes (search classification)
 │   ├── auth/               # Auth callback handler
+│   ├── brands/             # Brand pages (/brands/ and /brands/{slug}/)
 │   ├── business/           # Business add/claim flows
+│   ├── categories/         # Categories index page
+│   ├── locations/          # All UK cities grouped by country
 │   ├── login/              # Login page
 │   ├── provider/           # Provider profile pages
 │   ├── search/             # Search results page
@@ -42,14 +45,17 @@ src/
 ├── components/             # React components by feature
 │   ├── admin-area/         # Admin area page components
 │   ├── auth/               # Auth modal, forms, user menu
+│   ├── brand/              # Brand page components (index + individual)
 │   ├── brand-repair/       # Brand repair page components
 │   ├── business/           # Business add/claim flow components
+│   ├── categories/         # Categories index page components
 │   ├── city/               # City page components
 │   ├── country/            # Country page components
 │   ├── filters/            # Filter bar, modals, sort dropdowns
 │   ├── footer/             # Site footer
 │   ├── homepage/           # Homepage sections
 │   ├── layout/             # Layout wrapper components
+│   ├── locations/          # Locations page components
 │   ├── maps/               # Single/multi location maps
 │   ├── national-repair/    # National repair category components
 │   ├── national-retail/    # National retail category components
@@ -83,7 +89,7 @@ src/
 └── middleware.ts           # Auth middleware for protected routes
 
 docs/
-├── specs/                  # 21 locked UI specifications (see 00-index.md)
+├── specs/                  # 22 locked UI specifications (see 00-index.md)
 ├── backend/                # Database migrations
 └── guides/                 # Implementation guides
 ```
@@ -116,12 +122,13 @@ Use `haversine_distance_miles()` and `calculate_bounding_box()` functions for pr
 
 ## Design Specifications
 
-All UI specs are in `docs/specs/`. Reference `00-index.md` for the master list. All 21 specs are locked and should be followed exactly:
+All UI specs are in `docs/specs/`. Reference `00-index.md` for the master list. All 22 specs are locked and should be followed exactly:
 
 - **Header:** Logo (01), Search Bar (02), Auth/Login (04), Business Listing/Claim (03)
 - **Profile Pages:** Store Profile (06), Provider Profile (11)
 - **Location Pages:** Homepage (12), Country (13), City (07)
 - **Category Pages:** Retail Category (14), Repair Category (10), National Retail (17), National Repair (16), Brand Repair (15)
+- **Brand Pages:** Brand Page (22) - Brands index `/brands/` and individual brand pages `/brands/{slug}/`
 - **Reusable Components:** Store Card (08), Provider Card (09), Filter/Sort UI (18), Breadcrumbs (19), Map View (20), Review Display (21), Footer (05)
 
 ## Design System
@@ -171,7 +178,7 @@ Database includes pre-seeded reference data:
 - 4 UK countries
 - 217 admin areas
 - 563 places
-- 30 appliance categories (tier_1, tier_2, tier_3, supplementary)
+- 29 appliance categories (tier_1, tier_2, tier_3, supplementary) - TV/Television removed
 - 27 brands (premium, mid_range, value)
 - 5 grade levels (tatty-packaging, A-grade, B-grade, C-grade, mixed)
 - 13 FAQs (retail and repair)
