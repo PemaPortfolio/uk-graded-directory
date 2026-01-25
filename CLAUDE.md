@@ -34,6 +34,7 @@ src/
 │   ├── brands/             # Brand pages (/brands/ and /brands/{slug}/)
 │   ├── business/           # Business add/claim flows
 │   ├── categories/         # Categories index page
+│   ├── guides/             # Guides index and individual guide pages
 │   ├── locations/          # All UK cities grouped by country
 │   ├── login/              # Login page
 │   ├── provider/           # Provider profile pages
@@ -53,13 +54,14 @@ src/
 │   ├── country/            # Country page components
 │   ├── filters/            # Filter bar, modals, sort dropdowns
 │   ├── footer/             # Site footer
+│   ├── guides/             # Guides page components
 │   ├── homepage/           # Homepage sections
 │   ├── layout/             # Layout wrapper components
 │   ├── locations/          # Locations page components
 │   ├── maps/               # Single/multi location maps
 │   ├── national-repair/    # National repair category components
 │   ├── national-retail/    # National retail category components
-│   ├── nav/                # Navigation, header, business menu
+│   ├── nav/                # Navigation, header, dropdown menus, mobile menu
 │   ├── provider/           # Provider profile components
 │   ├── repair-category/    # Repair category page components
 │   ├── retail-category/    # Retail category page components
@@ -89,7 +91,7 @@ src/
 └── middleware.ts           # Auth middleware for protected routes
 
 docs/
-├── specs/                  # 22 locked UI specifications (see 00-index.md)
+├── specs/                  # 23 locked UI specifications (see 00-index.md)
 ├── backend/                # Database migrations
 └── guides/                 # Implementation guides
 ```
@@ -122,13 +124,14 @@ Use `haversine_distance_miles()` and `calculate_bounding_box()` functions for pr
 
 ## Design Specifications
 
-All UI specs are in `docs/specs/`. Reference `00-index.md` for the master list. All 22 specs are locked and should be followed exactly:
+All UI specs are in `docs/specs/`. Reference `00-index.md` for the master list. All 23 specs are locked and should be followed exactly:
 
 - **Header:** Logo (01), Search Bar (02), Auth/Login (04), Business Listing/Claim (03)
 - **Profile Pages:** Store Profile (06), Provider Profile (11)
 - **Location Pages:** Homepage (12), Country (13), City (07)
 - **Category Pages:** Retail Category (14), Repair Category (10), National Retail (17), National Repair (16), Brand Repair (15)
 - **Brand Pages:** Brand Page (22) - Brands index `/brands/` and individual brand pages `/brands/{slug}/`
+- **Navigation:** Navigation Enhancement (23) - Stores, Repairs, Guides dropdowns + mobile hamburger menu
 - **Reusable Components:** Store Card (08), Provider Card (09), Filter/Sort UI (18), Breadcrumbs (19), Map View (20), Review Display (21), Footer (05)
 
 ## Design System
