@@ -25,7 +25,7 @@ interface HeroSectionProps {
  */
 export default function HeroSection({ stats }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-hero bg-grid-pattern">
+    <section className="relative bg-gradient-hero bg-grid-pattern">
       {/* Decorative gradient orb */}
       <div
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-30 blur-3xl pointer-events-none"
