@@ -39,7 +39,7 @@ export default function Logo({ variant = 'default', className = '' }: LogoProps)
       <Image
         src={logoSrc}
         alt="Graded - Find graded appliances near you"
-        width={200}
+        width={120}
         height={40}
         priority
         className="h-8 w-auto md:h-9 lg:h-10"
