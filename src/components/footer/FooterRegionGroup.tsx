@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { FooterCountry } from '@/types/footer'
 import FooterAccordion from './FooterAccordion'
+import CountryFlag from '@/components/ui/CountryFlag'
 
 interface FooterRegionGroupProps {
   country: FooterCountry
@@ -22,7 +23,7 @@ export default function FooterRegionGroup({
   return (
     <FooterAccordion
       title={country.name}
-      icon={country.flagEmoji}
+      icon={<CountryFlag country={country.slug} className="w-5 h-4" />}
       count={country.adminAreas.length}
       defaultOpen={defaultOpen}
     >
