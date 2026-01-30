@@ -50,21 +50,51 @@ export default function CountryFlag({ country, className = 'w-5 h-4' }: CountryF
     case 'northern-ireland':
     case 'n-ireland':
     case 'ni':
-      // Union Jack for Northern Ireland
+      // Ulster Banner - Red cross on white with six-pointed star, Red Hand, and Crown
       return (
         <svg className={className} viewBox="0 0 60 40" aria-label="Northern Ireland flag">
-          <rect width="60" height="40" fill="#012169"/>
-          {/* White diagonals */}
-          <path d="M0,0 L60,40 M60,0 L0,40" stroke="white" strokeWidth="8"/>
-          {/* Red diagonals (offset) */}
-          <path d="M0,0 L30,20 M30,20 L60,40" stroke="#C8102E" strokeWidth="4" strokeLinecap="square"/>
-          <path d="M60,0 L30,20 M30,20 L0,40" stroke="#C8102E" strokeWidth="4" strokeLinecap="square"/>
-          {/* White cross */}
-          <rect x="25" width="10" height="40" fill="white"/>
-          <rect y="15" width="60" height="10" fill="white"/>
-          {/* Red cross */}
-          <rect x="27" width="6" height="40" fill="#C8102E"/>
-          <rect y="17" width="60" height="6" fill="#C8102E"/>
+          {/* White background */}
+          <rect width="60" height="40" fill="white"/>
+          {/* Red St George's Cross */}
+          <rect x="26" width="8" height="40" fill="#C8102E"/>
+          <rect y="16" width="60" height="8" fill="#C8102E"/>
+          {/* Six-pointed Star (white with gold/yellow border) */}
+          <g transform="translate(30, 22)">
+            {/* Star background - creates the six-pointed star shape */}
+            <polygon
+              points="0,-10 2.5,-4 8.7,-5 5,0 8.7,5 2.5,4 0,10 -2.5,4 -8.7,5 -5,0 -8.7,-5 -2.5,-4"
+              fill="white"
+              stroke="#FFD700"
+              strokeWidth="0.8"
+            />
+            {/* Red Hand of Ulster */}
+            <g transform="translate(0, 0) scale(0.4)">
+              <path
+                d="M0,-12 L-3,-12 L-3,-4 Q-4,-4 -5,-5 L-5,-12 L-8,-12 L-8,-4 Q-9,-4 -10,-5 L-10,-10 L-12,-10 L-12,-2 Q-12,4 -6,8 L-6,12 L6,12 L6,8 Q12,4 12,-2 L12,-10 L10,-10 L10,-5 Q9,-4 8,-4 L8,-12 L5,-12 L5,-5 Q4,-4 3,-4 L3,-12 Z"
+                fill="#C8102E"
+              />
+            </g>
+          </g>
+          {/* Crown (St Edward's Crown - simplified) */}
+          <g transform="translate(30, 8)">
+            {/* Crown base band */}
+            <rect x="-6" y="2" width="12" height="2.5" fill="#FFD700"/>
+            {/* Crown arches */}
+            <path
+              d="M-6,2 Q-6,-2 -3,-1 Q0,-4 3,-1 Q6,-2 6,2"
+              fill="none"
+              stroke="#FFD700"
+              strokeWidth="1.5"
+            />
+            {/* Crown orb on top */}
+            <circle cx="0" cy="-3" r="1.5" fill="#FFD700"/>
+            <line x1="0" y1="-4.5" x2="0" y2="-2" stroke="#FFD700" strokeWidth="0.8"/>
+            <line x1="-1" y1="-3" x2="1" y2="-3" stroke="#FFD700" strokeWidth="0.8"/>
+            {/* Jewels */}
+            <circle cx="-3" cy="0" r="0.8" fill="#C8102E"/>
+            <circle cx="3" cy="0" r="0.8" fill="#0065BD"/>
+            <circle cx="0" cy="-1" r="0.8" fill="#C8102E"/>
+          </g>
         </svg>
       )
 
