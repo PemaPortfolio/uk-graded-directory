@@ -13,9 +13,9 @@ interface LogoProps {
  * Brand: "GRADED" with tagline "APPLIANCE HUB"
  *
  * Sizing:
- * - Mobile (<768px): 32px height
- * - Tablet (768-1024px): 36px height
- * - Desktop (>1024px): 40px height
+ * - Mobile (<768px): 36px height
+ * - Tablet (768-1024px): 40px height
+ * - Desktop (>1024px): 48px height
  *
  * Logo uses its own red (#ea2a33), distinct from UI primary coral (#e85d4c).
  */
@@ -39,10 +39,10 @@ export default function Logo({ variant = 'default', className = '' }: LogoProps)
       <Image
         src={logoSrc}
         alt="Graded - Find graded appliances near you"
-        width={120}
-        height={40}
+        width={144}
+        height={48}
         priority
-        className="h-8 w-auto md:h-9 lg:h-10"
+        className="h-9 w-auto md:h-10 lg:h-12"
       />
     </Link>
   )
