@@ -432,6 +432,66 @@
     box-shadow: 0 0 20px rgba(232, 93, 76, 0.15);
   }
 
+  /* ===== HERO SECTION ELEVATED COMPONENTS ===== */
+
+  /* Hero Search Container - Floating glass card */
+  .hero-search-container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1.5rem;
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.02),
+      0 12px 24px rgba(0, 0, 0, 0.04),
+      0 24px 48px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    padding: 1.5rem;
+  }
+
+  /* Stats card with stronger presence */
+  .stats-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.03),
+      0 8px 16px rgba(0, 0, 0, 0.04),
+      0 16px 32px rgba(0, 0, 0, 0.03),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease;
+  }
+
+  .stats-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.04),
+      0 16px 32px rgba(0, 0, 0, 0.06),
+      0 24px 48px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  /* Glass badge for trust indicators */
+  .glass-badge {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.03),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  /* Hero trust pill */
+  .hero-trust-pill {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
   /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     .animate-fade-up,
