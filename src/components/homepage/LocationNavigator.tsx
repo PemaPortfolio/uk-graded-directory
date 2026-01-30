@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import CountryFlag from '@/components/ui/CountryFlag'
 
 interface City {
   id: string
@@ -82,14 +83,15 @@ export default function LocationNavigator({ countries, cities, totalCities }: Lo
             <button
               key={country.slug}
               onClick={() => setSelectedCountry(country.slug)}
-              className={`px-4 sm:px-6 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
+              className={`flex items-center gap-2 px-4 sm:px-6 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
                 selectedCountry === country.slug
                   ? 'border-[#e85d4c] text-[#e85d4c]'
                   : 'border-transparent text-gray-500 hover:text-gray-700'
               }`}
               aria-pressed={selectedCountry === country.slug}
             >
-              {country.flagEmoji} {country.name}
+              <CountryFlag country={country.slug} className="w-5 h-4 flex-shrink-0" />
+              {country.name}
             </button>
           ))}
         </div>
